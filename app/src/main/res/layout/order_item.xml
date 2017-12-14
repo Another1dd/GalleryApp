@@ -9,22 +9,22 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <android.support.constraint.Guideline
         android:id="@+id/orderItemPlaceholderIvLeft"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <ImageView
         android:id="@+id/orderItemPlaceholderIv"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:alpha="0.2"
         android:contentDescription="@null"
         android:src="@drawable/photo_placeholder"
-        android:alpha="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="@id/orderItemPlaceholderIvLeft"
@@ -32,18 +32,45 @@
         app:layout_constraintTop_toTopOf="@id/orderItemPlaceholderIvTop" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/orderItemRemoveButtonIvTop"
+        android:id="@+id/orderItemPhotoIvTop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.01" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/orderItemRemoveButtonIvLeft"
+        android:id="@+id/orderItemPhotoIvLeft"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.01" />
+        app:layout_constraintGuide_percent="0.16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/orderItemPhotoIvBot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/orderItemPhotoIvRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ImageView
+        android:id="@+id/orderItemPhotoIv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/orderItemPhotoIvBot"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="@id/orderItemPhotoIvLeft"
+        app:layout_constraintRight_toRightOf="@id/orderItemPhotoIvRight"
+        app:layout_constraintTop_toTopOf="@id/orderItemPhotoIvTop" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/orderItemRemoveButtonIvBot"
@@ -60,7 +87,7 @@
         android:src="@drawable/remove_button"
         app:layout_constraintBottom_toBottomOf="@id/orderItemRemoveButtonIvBot"
         app:layout_constraintDimensionRatio="172:174"
-        app:layout_constraintLeft_toLeftOf="@id/orderItemRemoveButtonIvLeft"
-        app:layout_constraintTop_toTopOf="@id/orderItemRemoveButtonIvTop" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </com.another1dd.galleryapp.ui.adapters.gallery.SquareHConstraintLayout>
