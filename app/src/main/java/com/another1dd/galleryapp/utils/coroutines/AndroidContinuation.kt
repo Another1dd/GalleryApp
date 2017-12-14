@@ -5,7 +5,7 @@ import android.os.Looper
 import kotlin.coroutines.experimental.Continuation
 
 
-internal class AndroidContinuation<T>(val cont: Continuation<T>) : Continuation<T> by cont {
+internal class AndroidContinuation<in T>(private val cont: Continuation<T>) : Continuation<T> by cont {
     override fun resume(value: T) {
         if (Looper.myLooper() == Looper.getMainLooper()) cont.resume(value)
         else Handler(Looper.getMainLooper()).post { cont.resume(value) }

@@ -5,12 +5,13 @@ import android.app.FragmentTransaction
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.another1dd.galleryapp.R
+import com.another1dd.galleryapp.models.Image
 import com.another1dd.galleryapp.ui.fragments.MainFragment
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var fragmentTranaction: FragmentTransaction
-
+    private lateinit var fragmentTranaction: FragmentTransaction
+    internal val selectedImages = ArrayList<Image>()
 
     @SuppressLint("CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -16,11 +16,8 @@ import kotlinx.android.synthetic.main.gallery_item.view.*
 
 
 class GalleryAdapter(private val context: Context,
-                     private val images: ArrayList<Image>) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
-    private val selectedImages = ArrayList(images.filter { it.isSelected })
-    private val fadeIn = context.loadAnimation(R.anim.fade_in)
-    private val fadeOut = context.loadAnimation(R.anim.fade_out)
-
+                     private val images: ArrayList<Image>,
+                     private val selectedImages: ArrayList<Image>) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return images.size
     }
@@ -37,6 +34,9 @@ class GalleryAdapter(private val context: Context,
     inner class ViewHolder(view: View,
                            private val galleryAdapter: GalleryAdapter) : RecyclerView.ViewHolder(view) {
         fun bindImage(image: Image) {
+            val fadeIn = context.loadAnimation(R.anim.fade_in)
+            val fadeOut = context.loadAnimation(R.anim.fade_out)
+
             Glide.with(context).load(image.path).centerCrop().into(itemView.galleryItemIv)
 
             if (image.isSelected) {
@@ -54,6 +54,8 @@ class GalleryAdapter(private val context: Context,
                     itemView.galleryItemSelectedBlock.visible()
                     itemView.galleryItemSelectedBlock.startAnimation(fadeIn)
                 } else {
+                    val i = selectedImages.indexOf(image)
+                    selectedImages.remove(image)
                     image.isSelected = false
                     fadeOut.animListener {
                         onAnimationEnd {
@@ -61,8 +63,6 @@ class GalleryAdapter(private val context: Context,
                         }
                     }
                     itemView.galleryItemSelectedBlock.startAnimation(fadeOut)
-                    val i = selectedImages.indexOf(image)
-                    selectedImages.remove(image)
                     selectedImages.forEachIndexed { index, image ->
                         if (index >= i) {
                             galleryAdapter.notifyItemChanged(images.indexOf(image))
