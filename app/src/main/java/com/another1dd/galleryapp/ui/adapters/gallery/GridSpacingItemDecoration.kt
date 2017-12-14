@@ -1,4 +1,4 @@
-package com.another1dd.galleryapp.ui.adapters
+package com.another1dd.galleryapp.ui.adapters.gallery
 
 import android.graphics.Rect
 import android.support.v7.widget.RecyclerView

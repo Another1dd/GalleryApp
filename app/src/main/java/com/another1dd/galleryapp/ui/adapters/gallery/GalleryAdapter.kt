@@ -1,4 +1,4 @@
-package com.another1dd.galleryapp.ui.adapters
+package com.another1dd.galleryapp.ui.adapters.gallery
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -11,7 +11,7 @@ import com.another1dd.galleryapp.extensions.gone
 import com.another1dd.galleryapp.extensions.loadAnimation
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
-import com.another1dd.galleryapp.utils.RxArrayList
+import com.another1dd.galleryapp.utils.rx.RxArrayList
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.gallery_item.view.*
 

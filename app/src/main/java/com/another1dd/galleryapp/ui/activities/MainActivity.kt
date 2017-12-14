@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.models.Image
 import com.another1dd.galleryapp.ui.fragments.MainFragment
-import com.another1dd.galleryapp.utils.RxArrayList
+import com.another1dd.galleryapp.utils.rx.RxArrayList
 
 
 class MainActivity : AppCompatActivity() {

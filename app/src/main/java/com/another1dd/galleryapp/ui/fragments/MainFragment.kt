@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.another1dd.galleryapp.R
+import com.another1dd.galleryapp.extensions.inflate
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return container?.inflate(R.layout.fragment_main)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -27,5 +28,4 @@ class MainFragment : Fragment() {
             fragmentTransaction.replace(R.id.fragmentContainer, GalleryFragment()).addToBackStack("gallery").commit()
         }
     }
-
 }

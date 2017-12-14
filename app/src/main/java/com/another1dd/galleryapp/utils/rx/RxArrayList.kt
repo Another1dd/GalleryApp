@@ -1,4 +1,4 @@
-package com.another1dd.galleryapp.utils
+package com.another1dd.galleryapp.utils.rx
 
 import io.reactivex.Observable
 import io.reactivex.subjects.ReplaySubject

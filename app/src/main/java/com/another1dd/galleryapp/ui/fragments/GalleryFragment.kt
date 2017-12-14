@@ -12,11 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.gone
+import com.another1dd.galleryapp.extensions.inflate
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
 import com.another1dd.galleryapp.ui.activities.MainActivity
-import com.another1dd.galleryapp.ui.adapters.GalleryAdapter
-import com.another1dd.galleryapp.ui.adapters.GridSpacingItemDecoration
+import com.another1dd.galleryapp.ui.adapters.gallery.GalleryAdapter
+import com.another1dd.galleryapp.ui.adapters.gallery.GridSpacingItemDecoration
 import com.another1dd.galleryapp.utils.coroutines.Android
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -32,7 +33,7 @@ class GalleryFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_gallery, container, false)
+        return container?.inflate(R.layout.fragment_gallery)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -42,7 +43,7 @@ class GalleryFragment : Fragment() {
         initButtons()
     }
 
-    private fun initRecyclerView(){
+    private fun initRecyclerView() {
         val gridLayoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
         galleryFragmentRecyclerView.layoutManager = gridLayoutManager
         galleryFragmentRecyclerView.addItemDecoration(GridSpacingItemDecoration(3, 10, false))
@@ -66,8 +67,8 @@ class GalleryFragment : Fragment() {
         }
     }
 
-    private fun initButtons(){
-        galleryFragmentNextButton.setOnClickListener{
+    private fun initButtons() {
+        galleryFragmentNextButton.setOnClickListener {
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.fragmentContainer, OrderFragment()).addToBackStack("order").commit()
         }
