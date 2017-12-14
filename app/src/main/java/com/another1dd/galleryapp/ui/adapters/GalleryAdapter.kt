@@ -11,13 +11,14 @@ import com.another1dd.galleryapp.extensions.gone
 import com.another1dd.galleryapp.extensions.loadAnimation
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
+import com.another1dd.galleryapp.utils.RxArrayList
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.gallery_item.view.*
 
 
 class GalleryAdapter(private val context: Context,
                      private val images: ArrayList<Image>,
-                     private val selectedImages: ArrayList<Image>) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
+                     private val selectedImages: RxArrayList<Image>) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return images.size
     }

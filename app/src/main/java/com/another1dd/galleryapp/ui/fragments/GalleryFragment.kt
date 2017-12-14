@@ -11,11 +11,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.another1dd.galleryapp.R
+import com.another1dd.galleryapp.extensions.gone
+import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
 import com.another1dd.galleryapp.ui.activities.MainActivity
 import com.another1dd.galleryapp.ui.adapters.GalleryAdapter
 import com.another1dd.galleryapp.ui.adapters.GridSpacingItemDecoration
 import com.another1dd.galleryapp.utils.coroutines.Android
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
@@ -24,6 +28,7 @@ import kotlinx.coroutines.experimental.launch
 class GalleryFragment : Fragment() {
     private lateinit var galleryAdapter: GalleryAdapter
     private lateinit var images: ArrayList<Image>
+    private var selectedImagesDisposable: Disposable? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,6 +38,11 @@ class GalleryFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initRecyclerView()
+        initButtons()
+    }
+
+    private fun initRecyclerView(){
         val gridLayoutManager = GridLayoutManager(activity, 3, GridLayoutManager.VERTICAL, false)
         galleryFragmentRecyclerView.layoutManager = gridLayoutManager
         galleryFragmentRecyclerView.addItemDecoration(GridSpacingItemDecoration(3, 10, false))
@@ -54,6 +64,30 @@ class GalleryFragment : Fragment() {
             galleryAdapter = GalleryAdapter(activity, images, (activity as MainActivity).selectedImages)
             galleryFragmentRecyclerView.adapter = galleryAdapter
         }
+    }
+
+    private fun initButtons(){
+        galleryFragmentNextButton.setOnClickListener{
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainer, OrderFragment()).addToBackStack("order").commit()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        selectedImagesDisposable = (activity as MainActivity).selectedImages.asObservable()
+                .observeOn(AndroidSchedulers.mainThread()).subscribe {
+            if ((activity as MainActivity).selectedImages.size > 0) {
+                galleryFragmentNextButton.visible()
+            } else {
+                galleryFragmentNextButton.gone()
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        selectedImagesDisposable?.dispose()
     }
 
     private suspend fun getImagesForGallery(): ArrayList<Image> {
