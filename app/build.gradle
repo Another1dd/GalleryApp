@@ -18,11 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 androidExtensions {
     experimental = true
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -37,6 +41,15 @@ dependencies {
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava:2.0.0"
+
+    kapt 'com.google.dagger:dagger-compiler:2.13'
+    implementation 'com.google.dagger:dagger:2.13'
+
+    implementation 'ru.gildor.coroutines:kotlin-coroutines-retrofit:0.8.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

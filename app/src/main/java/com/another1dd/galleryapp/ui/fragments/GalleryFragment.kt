@@ -15,6 +15,10 @@ import com.another1dd.galleryapp.extensions.gone
 import com.another1dd.galleryapp.extensions.inflate
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
+import com.another1dd.galleryapp.models.beans.instagram.InstagramResponse
+import com.another1dd.galleryapp.models.constants.GalleryType
+import com.another1dd.galleryapp.rest.InstagramRestAPI
+import com.another1dd.galleryapp.rest.RestClient
 import com.another1dd.galleryapp.ui.activities.MainActivity
 import com.another1dd.galleryapp.ui.adapters.gallery.GalleryAdapter
 import com.another1dd.galleryapp.ui.adapters.gallery.GridSpacingItemDecoration
@@ -24,6 +28,8 @@ import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_gallery.*
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
+import ru.gildor.coroutines.retrofit.Result
+import ru.gildor.coroutines.retrofit.awaitResult
 
 
 class GalleryFragment : Fragment() {
@@ -48,6 +54,16 @@ class GalleryFragment : Fragment() {
         galleryFragmentRecyclerView.layoutManager = gridLayoutManager
         galleryFragmentRecyclerView.addItemDecoration(GridSpacingItemDecoration(3, 10, false))
 
+        val bundle = this.arguments
+        if (bundle != null) {
+            when (bundle.get(GalleryType.TYPE)) {
+                GalleryType.GALLERY -> fillRVWithExternalStorageImages()
+                GalleryType.INSTAGRAM -> fillRVWithInstagramImages()
+            }
+        }
+    }
+
+    private fun fillRVWithExternalStorageImages() {
         val getImages = async {
             images = getImagesForGallery()
         }
@@ -120,5 +136,49 @@ class GalleryFragment : Fragment() {
 
         cursor.close()
         return listOfAllImages
+    }
+
+    private fun fillRVWithInstagramImages() {
+        var images: ArrayList<Image>? = null
+        val accessToken = (activity as MainActivity).instagramAccessToken
+        if (accessToken != null) {
+            val request = async {
+                val api = InstagramRestAPI(RestClient.retrofitService)
+                val result = api.getPhotos(accessToken).awaitResult()
+                images = when (result) {
+                    is Result.Ok -> process(result.value)
+                    is Result.Error -> throw Throwable("HTTP error: ${result.response.message()}")
+                    is Result.Exception -> throw result.exception
+                    else -> {
+                        throw Throwable("Something went wrong, please try again later.")
+                    }
+                }
+            }
+            launch(Android) {
+                request.await()
+
+                if (images != null) {
+                    galleryAdapter = GalleryAdapter(activity, images!!, (activity as MainActivity).selectedImages)
+                    galleryFragmentRecyclerView.adapter = galleryAdapter
+                }
+            }
+        }
+    }
+
+    private fun process(response: InstagramResponse): ArrayList<Image>? {
+        val dataResponse = response.data
+        val images = ArrayList<Image>()
+        var id = 0L
+        dataResponse?.forEach {
+            val image = it.user?.fullName?.let { it1 ->
+                it.images?.standardResolution?.url?.let { it2 ->
+                    Image(id, it1,
+                            it2, false)
+                }
+            }
+            id += 1
+            image?.let { it1 -> images.add(it1) }
+        }
+        return images
     }
 }

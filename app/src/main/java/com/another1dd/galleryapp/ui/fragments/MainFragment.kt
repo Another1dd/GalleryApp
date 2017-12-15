@@ -14,6 +14,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.inflate
+import com.another1dd.galleryapp.models.constants.GalleryType
+import com.another1dd.galleryapp.ui.activities.MainActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -30,16 +32,20 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mainFragmentButton.setOnClickListener {
+        mainFragmentGalleryButton.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkPermission()) {
-                    startGalleryFragment()
+                    startGalleryFragment(GalleryType.GALLERY)
                 } else {
                     requestPermission()
                 }
             } else {
-                startGalleryFragment()
+                startGalleryFragment(GalleryType.GALLERY)
             }
+        }
+
+        mainFragmentInstagramButton.setOnClickListener {
+            (activity as MainActivity).getInstagramToken()
         }
     }
 
@@ -59,7 +65,7 @@ class MainFragment : Fragment() {
         when (requestCode) {
             PERMISSION_REQUEST_CODE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    startGalleryFragment()
+                    startGalleryFragment(GalleryType.GALLERY)
                 } else {
                     Toast.makeText(activity, "Pls allow Gallery App to access photos, media, and files on your device.",
                             Toast.LENGTH_SHORT).show()
@@ -68,8 +74,12 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun startGalleryFragment() {
+    private fun startGalleryFragment(type: Int) {
+        val galleryFragment = GalleryFragment()
+        val bundle = Bundle()
+        bundle.putInt(GalleryType.TYPE, type)
+        galleryFragment.arguments = bundle
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer, GalleryFragment()).addToBackStack("gallery").commit()
+        fragmentTransaction.replace(R.id.fragmentContainer, galleryFragment).addToBackStack("gallery").commit()
     }
 }
