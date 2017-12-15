@@ -12,7 +12,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.order_item.view.*
 
 class OrderAdapter(private val context: Context,
-                   private val selectedImages: RxArrayList<Image>) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
+                   private val selectedImages: RxArrayList<Image>,
+                   private val itemClick: (Int) -> Unit) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return selectedImages.size
     }
@@ -30,6 +31,17 @@ class OrderAdapter(private val context: Context,
                            private val orderAdapter: OrderAdapter) : RecyclerView.ViewHolder(view) {
         fun bindImage(image: Image) {
             Glide.with(context).load(image.path).centerCrop().into(itemView.orderItemPhotoIv)
+
+            itemView.orderItemRemoveButtonIv.setOnClickListener {
+                val index = selectedImages.indexOf(image)
+                selectedImages.remove(image)
+
+                orderAdapter.notifyItemChanged(index)
+            }
+
+            itemView.orderItemPlaceholderIv.setOnClickListener {
+                itemClick(selectedImages.indexOf(image))
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.inflate
 import com.another1dd.galleryapp.ui.activities.MainActivity
+import com.another1dd.galleryapp.ui.adapters.order.LinearLayoutManagerWrapper
 import com.another1dd.galleryapp.ui.adapters.order.OrderAdapter
 import kotlinx.android.synthetic.main.fragment_order.*
 
@@ -27,10 +28,17 @@ class OrderFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        val linearLayoutManager = LinearLayoutManagerWrapper(activity, LinearLayoutManager.HORIZONTAL, false)
         orderFragmentRecyclerView.layoutManager = linearLayoutManager
 
-        val orderAdapter = OrderAdapter(activity, (activity as MainActivity).selectedImages)
+        val orderAdapter = OrderAdapter(activity, (activity as MainActivity).selectedImages, { index ->
+            val adjustmentFragment = AdjustmentFragment()
+            val bundle = Bundle()
+            bundle.putInt("index", index)
+            adjustmentFragment.arguments = bundle
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainer, adjustmentFragment).addToBackStack("adjustment").commit()
+        })
         orderFragmentRecyclerView.adapter = orderAdapter
     }
 }
