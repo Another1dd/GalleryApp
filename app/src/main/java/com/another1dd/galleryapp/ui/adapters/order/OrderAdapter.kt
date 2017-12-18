@@ -33,10 +33,8 @@ class OrderAdapter(private val context: Context,
             Glide.with(context).load(image.path).centerCrop().into(itemView.orderItemPhotoIv)
 
             itemView.orderItemRemoveButtonIv.setOnClickListener {
-                val index = selectedImages.indexOf(image)
                 selectedImages.remove(image)
-
-                orderAdapter.notifyItemChanged(index)
+                orderAdapter.notifyDataSetChanged()
             }
 
             itemView.orderItemPlaceholderIv.setOnClickListener {

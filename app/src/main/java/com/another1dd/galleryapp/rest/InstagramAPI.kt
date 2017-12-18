@@ -5,5 +5,5 @@ import retrofit2.Call
 
 
 interface InstagramAPI {
-    fun getPhotos(accessToken: String): Call<InstagramResponse>
+    fun getPhotos(accessToken: String, count: Int): Call<InstagramResponse>
 }

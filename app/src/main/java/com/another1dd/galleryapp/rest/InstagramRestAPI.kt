@@ -5,7 +5,7 @@ import retrofit2.Call
 import javax.inject.Inject
 
 class InstagramRestAPI @Inject constructor(private val retrofitService: RetrofitService) : InstagramAPI {
-    override fun getPhotos(accessToken: String): Call<InstagramResponse> {
-        return retrofitService.getTagPhotos(accessToken)
+    override fun getPhotos(accessToken: String, count: Int): Call<InstagramResponse> {
+        return retrofitService.getTagPhotos(accessToken, count)
     }
 }

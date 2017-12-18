@@ -8,6 +8,7 @@ import retrofit2.http.Query
 
 interface RetrofitService {
     @GET("v1/users/self/media/recent")
-    fun getTagPhotos(@Query("access_token") access_token: String): Call<InstagramResponse>
+    fun getTagPhotos(@Query("access_token") access_token: String, @Query("count") count: Int)
+            : Call<InstagramResponse>
 }
 

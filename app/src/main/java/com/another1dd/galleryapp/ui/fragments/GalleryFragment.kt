@@ -144,7 +144,7 @@ class GalleryFragment : Fragment() {
         if (accessToken != null) {
             val request = async {
                 val api = InstagramRestAPI(RestClient.retrofitService)
-                val result = api.getPhotos(accessToken).awaitResult()
+                val result = api.getPhotos(accessToken, 20).awaitResult()
                 images = when (result) {
                     is Result.Ok -> process(result.value)
                     is Result.Error -> throw Throwable("HTTP error: ${result.response.message()}")
