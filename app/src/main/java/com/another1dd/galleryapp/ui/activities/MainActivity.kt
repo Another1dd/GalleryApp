@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), InstagramAuthenticationListener {
             instagramAuthenticationDialog.dismiss()
         }
 
-        Log.d("AcessTokec", accessToken)
+        Log.d("AccessToken", accessToken)
         this.instagramAccessToken = accessToken
 
         startGalleryFragment(GalleryType.INSTAGRAM)

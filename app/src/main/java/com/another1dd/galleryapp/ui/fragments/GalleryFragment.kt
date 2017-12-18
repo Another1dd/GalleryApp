@@ -157,7 +157,15 @@ class GalleryFragment : Fragment() {
             launch(Android) {
                 request.await()
 
+
                 if (images != null) {
+                    val iterator = (activity as MainActivity).selectedImages.iterator()
+                    while (iterator.hasNext()) {
+                        if (!images!!.contains(iterator.next())) {
+                            iterator.remove()
+                        }
+                    }
+
                     galleryAdapter = GalleryAdapter(activity, images!!, (activity as MainActivity).selectedImages)
                     galleryFragmentRecyclerView.adapter = galleryAdapter
                 }
@@ -168,15 +176,17 @@ class GalleryFragment : Fragment() {
     private fun process(response: InstagramResponse): ArrayList<Image>? {
         val dataResponse = response.data
         val images = ArrayList<Image>()
-        var id = 0L
         dataResponse?.forEach {
+
             val image = it.user?.fullName?.let { it1 ->
                 it.images?.standardResolution?.url?.let { it2 ->
-                    Image(id, it1,
-                            it2, false)
+                    Image(0L, it1,
+                            it2, true)
                 }
             }
-            id += 1
+            if (!(activity as MainActivity).selectedImages.contains(image)) {
+                image?.isSelected = false
+            }
             image?.let { it1 -> images.add(it1) }
         }
         return images
