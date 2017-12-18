@@ -5,8 +5,11 @@ import android.app.Fragment
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.MediaStore
 import android.support.v7.widget.GridLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +18,7 @@ import com.another1dd.galleryapp.extensions.gone
 import com.another1dd.galleryapp.extensions.inflate
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
+import com.another1dd.galleryapp.models.beans.facebook.FacebookData
 import com.another1dd.galleryapp.models.beans.instagram.InstagramResponse
 import com.another1dd.galleryapp.models.constants.GalleryType
 import com.another1dd.galleryapp.rest.InstagramRestAPI
@@ -23,6 +27,10 @@ import com.another1dd.galleryapp.ui.activities.MainActivity
 import com.another1dd.galleryapp.ui.adapters.gallery.GalleryAdapter
 import com.another1dd.galleryapp.ui.adapters.gallery.GridSpacingItemDecoration
 import com.another1dd.galleryapp.utils.coroutines.Android
+import com.facebook.AccessToken
+import com.facebook.GraphRequest
+import com.facebook.HttpMethod
+import com.google.gson.GsonBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_gallery.*
@@ -58,7 +66,8 @@ class GalleryFragment : Fragment() {
         if (bundle != null) {
             when (bundle.get(GalleryType.TYPE)) {
                 GalleryType.GALLERY -> fillRVWithExternalStorageImages()
-                GalleryType.INSTAGRAM -> fillRVWithInstagramImages()
+                GalleryType.INSTAGRAM -> fillRVWithInstagramPhotos()
+                GalleryType.FACEBOOK -> fillRWWithFacebookPhotos()
             }
         }
     }
@@ -138,7 +147,7 @@ class GalleryFragment : Fragment() {
         return listOfAllImages
     }
 
-    private fun fillRVWithInstagramImages() {
+    private fun fillRVWithInstagramPhotos() {
         var images: ArrayList<Image>? = null
         val accessToken = (activity as MainActivity).instagramAccessToken
         if (accessToken != null) {
@@ -184,11 +193,49 @@ class GalleryFragment : Fragment() {
                             it2, true)
                 }
             }
-            if (!(activity as MainActivity).selectedImages.contains(image)) {
-                image?.isSelected = false
+            if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
+                image.isSelected = false
             }
             image?.let { it1 -> images.add(it1) }
         }
         return images
+    }
+
+    private fun fillRWWithFacebookPhotos() {
+        images = ArrayList()
+
+        val params = Bundle()
+        //TODO: Find idea how to get only large photo url's
+        params.putString("fields", "photos{images{source}}")
+        GraphRequest(
+                AccessToken.getCurrentAccessToken(),
+                "/me/albums",
+                params,
+                HttpMethod.GET,
+                GraphRequest.Callback { response ->
+                    Log.d("Facebook", response.toString())
+
+                    val data = GsonBuilder().create().fromJson(response.jsonObject.toString(), FacebookData::class.java)
+
+                    data.data?.forEach {
+                        it.photos?.data?.forEach {
+                                val image = it.images?.first()?.source?.let { it1 -> Image(0L, null, it1, true) }
+
+                                if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
+                                    image.isSelected = false
+                                }
+
+                                image?.let { it1 -> images.add(it1) }
+                        }
+                    }
+
+
+                    val handlerUi = Handler(Looper.getMainLooper())
+                    handlerUi.post {
+                        galleryAdapter = GalleryAdapter(activity, images, (activity as MainActivity).selectedImages)
+                        galleryFragmentRecyclerView.adapter = galleryAdapter
+                    }
+                }
+        ).executeAsync()
     }
 }

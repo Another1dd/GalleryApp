@@ -16,7 +16,12 @@ import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.inflate
 import com.another1dd.galleryapp.models.constants.GalleryType
 import com.another1dd.galleryapp.ui.activities.MainActivity
+import com.facebook.AccessToken
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginResult
 import kotlinx.android.synthetic.main.fragment_main.*
+import java.util.*
 
 
 class MainFragment : Fragment() {
@@ -32,6 +37,11 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initFb()
+        initButtons()
+    }
+
+    private fun initButtons() {
         mainFragmentGalleryButton.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkPermission()) {
@@ -46,6 +56,14 @@ class MainFragment : Fragment() {
 
         mainFragmentInstagramButton.setOnClickListener {
             (activity as MainActivity).getInstagramToken()
+        }
+
+        mainFragmentFacebookButton.setOnClickListener {
+            if (AccessToken.getCurrentAccessToken() != null) {
+                startGalleryFragment(GalleryType.FACEBOOK)
+            } else {
+                Toast.makeText(activity, "Login with facebook", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -81,5 +99,22 @@ class MainFragment : Fragment() {
         galleryFragment.arguments = bundle
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, galleryFragment).addToBackStack("gallery").commit()
+    }
+
+    private fun initFb() {
+        mainFragmentLoginButton.registerCallback((activity as MainActivity).callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onSuccess(result: LoginResult) {
+                Log.d("Facebook", "OnSuccess")
+            }
+
+            override fun onCancel() {
+                Log.d("Facebook", "OnCancel")
+            }
+
+            override fun onError(error: FacebookException?) {
+                Log.d("Facebook", "OnError -> " + error.toString())
+            }
+        })
+        mainFragmentLoginButton.setReadPermissions(Arrays.asList("user_photos"))
     }
 }

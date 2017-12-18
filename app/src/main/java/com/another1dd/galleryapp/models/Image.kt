@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Image(
         var id: Long = 0,
-        var name: String,
+        var name: String? = null,
         var path: String,
         var isSelected: Boolean = false
 ) : Parcelable
