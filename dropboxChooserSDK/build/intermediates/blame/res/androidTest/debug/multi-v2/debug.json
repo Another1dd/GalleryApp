@@ -1,0 +1,1738 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-en-rAU_values-en-rAU.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hy_values-hy.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-hy\\values-hy.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-et_values-et.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-et\\values-et.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ta_values-ta.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ta\\values-ta.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es-rUS_values-es-rUS.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v16_values-v16.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-te_values-te.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-te\\values-te.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-km_values-km.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-cs_values-cs.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-cs\\values-cs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-zu_values-zu.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ky_values-ky.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-it_values-it.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,174,233,311,460,516,574,651",
+                        "endColumns": "56,61,58,77,148,55,57,76,156",
+                        "endOffsets": "107,169,228,306,455,511,569,646,803"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "808",
+                        "endColumns": "100",
+                        "endOffsets": "904"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-land-hdpi-1024x600-v4_values-large-land-hdpi-1024x600-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-large-land-hdpi-1024x600-v4\\values-large-land-hdpi-1024x600-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385",
+                        "endColumns": "61,67,68,64,65,61",
+                        "endOffsets": "112,180,249,314,380,442"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-bn_values-bn.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-bn\\values-bn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-zh-rTW_values-zh-rTW.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,163,216,278,369,419,471,532",
+                        "endColumns": "50,56,52,61,90,49,51,60,94",
+                        "endOffsets": "101,158,211,273,364,414,466,527,622"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "627",
+                        "endColumns": "100",
+                        "endOffsets": "723"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-bs_values-bs.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ur_values-ur.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ur\\values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "102",
+                        "endOffsets": "153"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ro_values-ro.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-el_values-el.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-el\\values-el.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-eu_values-eu.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-eu\\values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ne_values-ne.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ne\\values-ne.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ml_values-ml.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-lt_values-lt.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-lt\\values-lt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-mr_values-mr.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-mr\\values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-land-mdpi-1024x600-v4_values-large-land-mdpi-1024x600-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-large-land-mdpi-1024x600-v4\\values-large-land-mdpi-1024x600-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385",
+                        "endColumns": "61,67,68,64,65,61",
+                        "endOffsets": "112,180,249,314,380,442"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-gl_values-gl.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-gl\\values-gl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ca_values-ca.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hi_values-hi.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-af_values-af.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-af\\values-af.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sr_values-sr.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sr\\values-sr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pt-rBR_values-pt-rBR.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,234,311,462,519,578,655",
+                        "endColumns": "56,62,58,76,150,56,58,76,165",
+                        "endOffsets": "107,170,229,306,457,514,573,650,816"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "821",
+                        "endColumns": "100",
+                        "endOffsets": "917"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-hdpi-1024x600-v4_values-large-hdpi-1024x600-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-large-hdpi-1024x600-v4\\values-large-hdpi-1024x600-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385",
+                        "endColumns": "61,67,68,64,65,61",
+                        "endOffsets": "112,180,249,314,380,442"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pa_values-pa.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-pa\\values-pa.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v24_values-v24.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\e9901238f0b0ad63d8dac2a7026e6c36\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pt_values-pt.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-pt\\values-pt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-si_values-si.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-si\\values-si.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw_values-sw.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sw\\values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-en-rIN_values-en-rIN.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-gu_values-gu.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-gu\\values-gu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "670",
+                        "endColumns": "100",
+                        "endOffsets": "766"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,173,230,300,392,443,495,560",
+                        "endColumns": "57,59,56,69,91,50,51,64,109",
+                        "endOffsets": "108,168,225,295,387,438,490,555,665"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fi_values-fi.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sl_values-sl.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sl\\values-sl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-iw_values-iw.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-iw\\values-iw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "102",
+                        "endOffsets": "153"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-nb_values-nb.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-nb\\values-nb.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fr_values-fr.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,119,181,241,328,492,553,616,697",
+                        "endColumns": "63,61,59,86,163,60,62,80,182",
+                        "endOffsets": "114,176,236,323,487,548,611,692,875"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "880",
+                        "endColumns": "100",
+                        "endOffsets": "976"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385,447,507",
+                        "endColumns": "61,67,68,64,65,61,59,54",
+                        "endOffsets": "112,180,249,314,380,442,502,557"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pt-rPT_values-pt-rPT.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-lo_values-lo.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-lo\\values-lo.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-in_values-in.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-in\\values-in.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-th_values-th.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-th\\values-th.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,116,119,126,131,135,139",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "109,163,216,273,329,394,433,478,521,570,620,661,710,760,807,856,903,964,1008,1061,1118,1175,1228,1282,1336,1392,1454,1558,1682,1807,1918,1968,2014,2056,2106,2160,2215,2260,2318,2371,2423,2467,2516,2579,2631,2683,2735,2787,2846,2907,2962,3023,3076,3116,3164,3210,3272,3336,3394,3447,3488,3538,3586,3633,3685,3731,3780,3823,3871,3982,4052,4163,4220,4331,4381,4425,4483,4529,4591,4659,4728,4793,4859,4921,4981,5041,5107,5174,5239,5303,5355,5408,5464,5519,5572,5626,5679,5731,5786,5842,5903,5961,6037,6173,6227,6283,6357,6494,6785,6945,7305,7539,7762,7993",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,115,118,125,130,134,138,143",
+                        "endColumns": "53,52,56,55,64,38,44,42,48,49,40,48,49,46,48,46,60,43,52,56,56,52,53,53,55,61,103,123,124,110,49,45,41,49,53,54,44,57,52,51,43,48,62,51,51,51,51,58,60,54,60,52,39,47,45,61,63,57,52,40,49,47,46,51,45,48,42,47,110,69,110,56,110,49,43,57,45,61,67,68,64,65,61,59,59,65,66,64,63,51,52,55,54,52,53,52,51,54,55,60,57,75,135,53,55,73,136,12,12,12,12,12,12,12",
+                        "endOffsets": "158,211,268,324,389,428,473,516,565,615,656,705,755,802,851,898,959,1003,1056,1113,1170,1223,1277,1331,1387,1449,1553,1677,1802,1913,1963,2009,2051,2101,2155,2210,2255,2313,2366,2418,2462,2511,2574,2626,2678,2730,2782,2841,2902,2957,3018,3071,3111,3159,3205,3267,3331,3389,3442,3483,3533,3581,3628,3680,3726,3775,3818,3866,3977,4047,4158,4215,4326,4376,4420,4478,4524,4586,4654,4723,4788,4854,4916,4976,5036,5102,5169,5234,5298,5350,5403,5459,5514,5567,5621,5674,5726,5781,5837,5898,5956,6032,6168,6222,6278,6352,6489,6780,6940,7300,7534,7757,7988,8230"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,47,48,49,50,51,52,53,54,55,56,58,59,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,97,98,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,148,150,151,152,153,154,155,156,157,158,160,167,170,177,182,186,208",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "109,163,216,273,329,394,433,478,521,570,620,661,710,760,807,856,903,964,1008,1061,1118,1175,1228,1282,1336,1392,1454,1558,1682,1807,1918,1968,2014,2056,2106,2160,2215,2260,2318,2371,2423,2467,2737,2800,2852,2904,2956,3008,3067,3128,3183,3244,3368,3408,3661,3707,3769,3833,3891,3944,3985,4035,4083,4130,4182,4228,4277,4320,4368,4479,4549,4660,4717,4828,4878,5848,5906,6293,6355,6423,6492,6557,6623,6685,6745,6805,6871,6938,7003,7067,7119,7172,7228,7283,7336,7390,7443,8905,9030,9086,9147,9205,9281,9417,9471,9527,9601,9809,10100,10260,10620,10854,11077,12587",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,47,48,49,50,51,52,53,54,55,56,58,59,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,97,98,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,148,150,151,152,153,154,155,156,157,158,166,169,176,181,185,189,212",
+                        "endColumns": "53,52,56,55,64,38,44,42,48,49,40,48,49,46,48,46,60,43,52,56,56,52,53,53,55,61,103,123,124,110,49,45,41,49,53,54,44,57,52,51,43,48,62,51,51,51,51,58,60,54,60,52,39,47,45,61,63,57,52,40,49,47,46,51,45,48,42,47,110,69,110,56,110,49,43,57,45,61,67,68,64,65,61,59,59,65,66,64,63,51,52,55,54,52,53,52,51,54,55,60,57,75,135,53,55,73,136,12,12,12,12,12,12,12",
+                        "endOffsets": "158,211,268,324,389,428,473,516,565,615,656,705,755,802,851,898,959,1003,1056,1113,1170,1223,1277,1331,1387,1449,1553,1677,1802,1913,1963,2009,2051,2101,2155,2210,2255,2313,2366,2418,2462,2511,2795,2847,2899,2951,3003,3062,3123,3178,3239,3292,3403,3451,3702,3764,3828,3886,3939,3980,4030,4078,4125,4177,4223,4272,4315,4363,4474,4544,4655,4712,4823,4873,4917,5901,5947,6350,6418,6487,6552,6618,6680,6740,6800,6866,6933,6998,7062,7114,7167,7223,7278,7331,7385,7438,7490,8955,9081,9142,9200,9276,9412,9466,9522,9596,9733,10095,10255,10615,10849,11072,11303,12824"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,54,55,59,60,61",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,187,245,1245,1315,1383,1455,1525,1586,1647,1708,1770,1834,1896,1957,2025,2125,2185,2251,2324,2393,2450,2502,2564,2636,2712,2747,2782,2832,2866,2901,2936,3006,3077,3194,3395,3505,3706,3835,3907",
+                        "endLines": "2,3,4,5,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,53,54,58,59,60,61",
+                        "endColumns": "68,62,57,73,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66",
+                        "endOffsets": "119,182,240,314,1310,1378,1450,1520,1581,1642,1703,1765,1829,1891,1952,2020,2120,2180,2246,2319,2388,2445,2497,2559,2631,2707,2742,2777,2827,2861,2896,2931,3001,3072,3189,3390,3500,3701,3830,3902,3969"
+                    },
+                    "to": {
+                        "startLines": "44,45,60,62,99,100,101,102,103,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,149,159,190,191,196,199,204,206,207",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2516,2585,3456,3587,5952,6022,6090,6162,6232,7495,7556,7617,7679,7743,7805,7866,7934,8034,8094,8160,8233,8302,8359,8411,8473,8545,8621,8656,8691,8741,8775,8810,8960,9738,11308,11425,11692,11985,12252,12448,12520",
+                        "endLines": "44,45,60,62,99,100,101,102,103,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,149,159,190,194,196,202,204,206,207",
+                        "endColumns": "68,62,57,73,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66",
+                        "endOffsets": "2580,2643,3509,3656,6017,6085,6157,6227,6288,7551,7612,7674,7738,7800,7861,7929,8029,8089,8155,8228,8297,8354,8406,8468,8540,8616,8651,8686,8736,8770,8805,8840,9025,9804,11420,11621,11797,12181,12376,12515,12582"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\e9901238f0b0ad63d8dac2a7026e6c36\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,144,215,288,348,414,536,597,663",
+                        "endColumns": "88,70,72,59,65,121,60,65,66",
+                        "endOffsets": "139,210,283,343,409,531,592,658,725"
+                    },
+                    "to": {
+                        "startLines": "46,57,61,147,195,197,198,203,205",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2648,3297,3514,8845,11626,11802,11924,12186,12381",
+                        "endColumns": "88,70,72,59,65,121,60,65,66",
+                        "endOffsets": "2732,3363,3582,8900,11687,11919,11980,12247,12443"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ru_values-ru.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "831",
+                        "endColumns": "100",
+                        "endOffsets": "927"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-ru\\values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,175,236,323,479,535,593,677",
+                        "endColumns": "58,60,60,86,155,55,57,83,153",
+                        "endOffsets": "109,170,231,318,474,530,588,672,826"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-tl_values-tl.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-tl\\values-tl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ka_values-ka.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ka\\values-ka.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko_values-ko.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "637",
+                        "endColumns": "100",
+                        "endOffsets": "733"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,163,216,279,371,423,477,541",
+                        "endColumns": "50,56,52,62,91,51,53,63,95",
+                        "endOffsets": "101,158,211,274,366,418,472,536,632"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-en-rGB_values-en-rGB.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ms_values-ms.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ms\\values-ms.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "790",
+                        "endColumns": "100",
+                        "endOffsets": "886"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-ms\\values-ms.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,110,170,227,296,448,505,564,636",
+                        "endColumns": "54,59,56,68,151,56,58,71,153",
+                        "endOffsets": "105,165,222,291,443,500,559,631,785"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sq_values-sq.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sq\\values-sq.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-pl_values-pl.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "832",
+                        "endColumns": "100",
+                        "endOffsets": "928"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-pl\\values-pl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,185,246,320,478,538,599,673",
+                        "endColumns": "68,60,60,73,157,59,60,73,158",
+                        "endOffsets": "119,180,241,315,473,533,594,668,827"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hr_values-hr.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-hr\\values-hr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-zh-rHK_values-zh-rHK.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-zh-rHK\\values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "101",
+                        "endOffsets": "152"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-mk_values-mk.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-mk\\values-mk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fr-rCA_values-fr-rCA.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-kk_values-kk.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-kk\\values-kk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-land_values-land.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385",
+                        "endColumns": "61,67,68,64,65,61",
+                        "endOffsets": "112,180,249,314,380,442"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-de_values-de.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,116,180,243,328,482,543,606,684",
+                        "endColumns": "60,63,62,84,153,60,62,77,161",
+                        "endOffsets": "111,175,238,323,477,538,601,679,841"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "846",
+                        "endColumns": "100",
+                        "endOffsets": "942"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-port_values-port.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sv_values-sv.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sv\\values-sv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-az_values-az.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-az\\values-az.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-bg_values-bg.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-bg\\values-bg.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-nl_values-nl.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-nl\\values-nl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sk_values-sk.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ar_values-ar.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-large-mdpi-1024x600-v4_values-large-mdpi-1024x600-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-large-mdpi-1024x600-v4\\values-large-mdpi-1024x600-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385,447",
+                        "endColumns": "61,67,68,64,65,61,59",
+                        "endOffsets": "112,180,249,314,380,442,502"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-mn_values-mn.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-mn\\values-mn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-da_values-da.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-da\\values-da.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-be_values-be.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "108",
+                        "endOffsets": "159"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es_values-es.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "820",
+                        "endColumns": "100",
+                        "endOffsets": "916"
+                    }
+                },
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-es\\values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,234,312,466,524,584,663",
+                        "endColumns": "56,62,58,77,153,57,59,78,156",
+                        "endOffsets": "107,170,229,307,461,519,579,658,815"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-my_values-my.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-tr_values-tr.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-tr\\values-tr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-fa_values-fa.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-fa\\values-fa.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-uk_values-uk.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-kn_values-kn.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-kn\\values-kn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-id_values-id.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-id\\values-id.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,110,170,227,302,451,507,565,635",
+                        "endColumns": "54,59,56,74,148,55,57,69,150",
+                        "endOffsets": "105,165,222,297,446,502,560,630,781"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-xlarge-v4_values-xlarge-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,117,185,254,319,385,447,507,575",
+                        "endColumns": "61,67,68,64,65,61,59,67,67",
+                        "endOffsets": "112,180,249,314,380,442,502,570,638"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-zh-rCN_values-zh-rCN.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,163,216,276,363,413,465,524",
+                        "endColumns": "50,56,52,59,86,49,51,58,86",
+                        "endOffsets": "101,158,211,271,358,408,460,519,606"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "611",
+                        "endColumns": "100",
+                        "endOffsets": "707"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v21_values-v21.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\e9901238f0b0ad63d8dac2a7026e6c36\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,5,8,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,223,386,554",
+                        "endLines": "4,7,10,13",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "218,381,549,716"
+                    },
+                    "to": {
+                        "startLines": "8,11,15,19",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "596,764,1053,1349",
+                        "endLines": "10,13,17,21",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "759,922,1216,1511"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,14,18,22,25",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,927,1221,1516,1688",
+                        "endLines": "2,3,4,5,6,7,14,18,24,29",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,1048,1344,1683,2021"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-am_values-am.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-am\\values-am.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hu_values-hu.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-hu\\values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-vi_values-vi.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-vi\\values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-es-rES_values-es-rES.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-es-rES\\values-es-rES.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,234,313,456,514,574,653",
+                        "endColumns": "56,62,58,78,142,57,59,78,156",
+                        "endOffsets": "107,170,229,308,451,509,569,648,805"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-lv_values-lv.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-uz_values-uz.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-uz\\values-uz.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-is_values-is.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-is\\values-is.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

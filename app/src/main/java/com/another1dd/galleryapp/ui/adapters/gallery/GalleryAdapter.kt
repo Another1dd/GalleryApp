@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.gallery_item.view.*
 
 
 class GalleryAdapter(private val context: Context,
-                     private val images: ArrayList<Image>,
+                     private var images: ArrayList<Image>,
                      private val selectedImages: RxArrayList<Image>) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return images.size
@@ -30,6 +30,10 @@ class GalleryAdapter(private val context: Context,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.gallery_item, parent, false)
         return ViewHolder(view, this)
+    }
+
+    fun setData(images: ArrayList<Image>){
+        this.images = images
     }
 
     inner class ViewHolder(view: View,

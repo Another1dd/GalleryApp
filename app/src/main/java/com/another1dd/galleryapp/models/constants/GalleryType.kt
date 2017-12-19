@@ -5,4 +5,5 @@ object GalleryType {
     const val GALLERY = 0
     const val INSTAGRAM = 1
     const val FACEBOOK = 2
+    const val DROPBOX = 3
 }

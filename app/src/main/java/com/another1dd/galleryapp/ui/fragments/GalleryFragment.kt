@@ -1,7 +1,9 @@
 package com.another1dd.galleryapp.ui.fragments
 
 
+import android.app.Activity
 import android.app.Fragment
+import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
@@ -24,9 +26,11 @@ import com.another1dd.galleryapp.models.constants.GalleryType
 import com.another1dd.galleryapp.rest.InstagramRestAPI
 import com.another1dd.galleryapp.rest.RestClient
 import com.another1dd.galleryapp.ui.activities.MainActivity
+import com.another1dd.galleryapp.ui.activities.MainActivity.Companion.DBX_CHOOSER_REQUEST
 import com.another1dd.galleryapp.ui.adapters.gallery.GalleryAdapter
 import com.another1dd.galleryapp.ui.adapters.gallery.GridSpacingItemDecoration
 import com.another1dd.galleryapp.utils.coroutines.Android
+import com.dropbox.chooser.android.DbxChooser
 import com.facebook.AccessToken
 import com.facebook.GraphRequest
 import com.facebook.HttpMethod
@@ -44,6 +48,7 @@ class GalleryFragment : Fragment() {
     private lateinit var galleryAdapter: GalleryAdapter
     private lateinit var images: ArrayList<Image>
     private var selectedImagesDisposable: Disposable? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -68,6 +73,7 @@ class GalleryFragment : Fragment() {
                 GalleryType.GALLERY -> fillRVWithExternalStorageImages()
                 GalleryType.INSTAGRAM -> fillRVWithInstagramPhotos()
                 GalleryType.FACEBOOK -> fillRWWithFacebookPhotos()
+                GalleryType.DROPBOX -> prepareDropBoxGallery()
             }
         }
     }
@@ -219,13 +225,13 @@ class GalleryFragment : Fragment() {
 
                     data.data?.forEach {
                         it.photos?.data?.forEach {
-                                val image = it.images?.first()?.source?.let { it1 -> Image(0L, null, it1, true) }
+                            val image = it.images?.first()?.source?.let { it1 -> Image(0L, null, it1, true) }
 
-                                if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
-                                    image.isSelected = false
-                                }
+                            if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
+                                image.isSelected = false
+                            }
 
-                                image?.let { it1 -> images.add(it1) }
+                            image?.let { it1 -> images.add(it1) }
                         }
                     }
 
@@ -237,5 +243,41 @@ class GalleryFragment : Fragment() {
                     }
                 }
         ).executeAsync()
+    }
+
+    private fun prepareDropBoxGallery() {
+        images = ArrayList()
+        if (!(activity as MainActivity).selectedImages.isEmpty()) {
+            (activity as MainActivity).selectedImages.forEach {
+                images.add(it)
+            }
+        }
+        galleryFragmentFab.visible()
+
+        galleryFragmentFab.setOnClickListener {
+            (activity as MainActivity).runDropBoxChooser()
+        }
+
+        galleryAdapter = GalleryAdapter(activity, images, (activity as MainActivity).selectedImages)
+        galleryFragmentRecyclerView.adapter = galleryAdapter
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == DBX_CHOOSER_REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
+                val result = DbxChooser.Result(data)
+                Log.d("DropBox", "Link to selected file: " + result.link)
+                val image = Image(0L, result.name, result.link.toString(), false)
+                images.add(image)
+                galleryAdapter.setData(images)
+                galleryAdapter.notifyDataSetChanged()
+                // Handle the result
+            } else {
+                // Failed or was cancelled by the user.
+                Log.d("DropBox", "Failed or canceled")
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
     }
 }

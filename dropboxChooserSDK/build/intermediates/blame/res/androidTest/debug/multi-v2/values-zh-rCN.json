@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "map": [
+                {
+                    "source": "D:\\Projects\\GalleryApp\\dropboxChooserSDK\\build\\intermediates\\bundles\\debug\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,163,216,276,363,413,465,524",
+                        "endColumns": "50,56,52,59,86,49,51,58,86",
+                        "endOffsets": "101,158,211,271,358,408,460,519,606"
+                    }
+                },
+                {
+                    "source": "D:\\Android\\gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\ec3712fe7858370570ca7a6a24b868cb\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "611",
+                        "endColumns": "100",
+                        "endOffsets": "707"
+                    }
+                }
+            ]
+        }
+    ]
+}

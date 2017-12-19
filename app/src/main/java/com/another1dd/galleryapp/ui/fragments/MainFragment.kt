@@ -14,8 +14,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.inflate
+import com.another1dd.galleryapp.models.constants.DropBox
 import com.another1dd.galleryapp.models.constants.GalleryType
 import com.another1dd.galleryapp.ui.activities.MainActivity
+import com.dropbox.chooser.android.DbxChooser
 import com.facebook.AccessToken
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -29,6 +31,10 @@ class MainFragment : Fragment() {
         const val PERMISSION_REQUEST_CODE = 1
     }
 
+    private val mChooser: DbxChooser by lazy {
+        DbxChooser(DropBox.DROPBOX_APP_KEY)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return container?.inflate(R.layout.fragment_main)
@@ -39,6 +45,8 @@ class MainFragment : Fragment() {
 
         initFb()
         initButtons()
+
+        (activity as MainActivity).selectedImages.clear()
     }
 
     private fun initButtons() {
@@ -64,6 +72,10 @@ class MainFragment : Fragment() {
             } else {
                 Toast.makeText(activity, "Login with facebook", Toast.LENGTH_LONG).show()
             }
+        }
+
+        mainFragmentDropBoxButton.setOnClickListener {
+            startGalleryFragment(GalleryType.DROPBOX)
         }
     }
 
@@ -98,7 +110,7 @@ class MainFragment : Fragment() {
         bundle.putInt(GalleryType.TYPE, type)
         galleryFragment.arguments = bundle
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer, galleryFragment).addToBackStack("gallery").commit()
+        fragmentTransaction.replace(R.id.fragmentContainer, galleryFragment,"gallery").addToBackStack("gallery").commit()
     }
 
     private fun initFb() {
