@@ -44,9 +44,6 @@ class MainActivity : AppCompatActivity(), InstagramAuthenticationListener {
 
         callbackManager = CallbackManager.Factory.create()
 
-        //drop box init
-
-
         fragmentTranaction = fragmentManager.beginTransaction()
         fragmentTranaction.add(R.id.fragmentContainer, MainFragment()).addToBackStack("main").commit()
     }
