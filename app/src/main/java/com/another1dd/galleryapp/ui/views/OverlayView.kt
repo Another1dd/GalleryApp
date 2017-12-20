@@ -75,17 +75,16 @@ open class OverlayView : View {
         mCropRectCornerTouchAreaLineLength = resources.getDimensionPixelSize(R.dimen.default_crop_rect_corner_touch_area_line_length)
     }
 
-
-    fun setShowDividerGrid(show: Boolean) {
-        mShowDividerGrid = show
-        mDividerType = DivideType.NO_DIVIDE
-        postInvalidate()
-    }
-
     fun setDividerType(dividerType: Int) {
-        mShowDividerGrid = true
-        mDividerType = dividerType
-        postInvalidate()
+        if (dividerType == DivideType.NO_DIVIDE) {
+            mShowDividerGrid = false
+            mDividerType = dividerType
+            postInvalidate()
+        } else {
+            mShowDividerGrid = true
+            mDividerType = dividerType
+            postInvalidate()
+        }
     }
 
     /**

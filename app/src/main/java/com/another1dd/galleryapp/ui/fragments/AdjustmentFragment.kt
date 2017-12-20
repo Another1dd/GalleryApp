@@ -17,11 +17,11 @@ import com.another1dd.galleryapp.ui.adapters.order.LinearLayoutManagerWrapper
 import com.another1dd.galleryapp.ui.views.TransformImageView
 import kotlinx.android.synthetic.main.fragment_adjustment.*
 import kotlinx.android.synthetic.main.redactor_view.*
-import java.lang.Exception
 
 
 class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener {
     private var index = 0
+    private var adjustmentAdapter: AdjustmentAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,8 +31,8 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initRecyclerView()
         initCropView()
+        initRecyclerView()
         initButtons()
     }
 
@@ -40,8 +40,10 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
         val linearLayoutManager = LinearLayoutManagerWrapper(activity, LinearLayoutManager.HORIZONTAL, false)
         adjustmentRecyclerView.layoutManager = linearLayoutManager
 
-        val adjustmentAdapter = AdjustmentAdapter(activity, (activity as MainActivity).selectedImages, index, { index ->
+        adjustmentAdapter = AdjustmentAdapter(activity, (activity as MainActivity).selectedImages, index, { index ->
+            this.index = index
             val image = (activity as MainActivity).selectedImages[index]
+            viewOverlay.setDividerType(image.divideType)
             adjustmentRedactorView.resetCropImageView(image.path)
         })
         adjustmentRecyclerView.adapter = adjustmentAdapter
@@ -57,40 +59,57 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
             index = bundle.getInt("index")
             val image = (activity as MainActivity).selectedImages[index]
             imageViewCrop.setImageUri(image.path)
+            viewOverlay.setDividerType(image.divideType)
         }
     }
 
     private fun initButtons() {
         adjustmentButtonOneXOne.setOnClickListener {
-            viewOverlay.setShowDividerGrid(false)
+            viewOverlay.setDividerType(DivideType.NO_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.NO_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
         adjustmentButtonThreeXThree.setOnClickListener {
-            viewOverlay.setShowDividerGrid(true)
+            viewOverlay.setDividerType(DivideType.NINE_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.NINE_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonOneXThreeCenter.setOnClickListener{
+        adjustmentButtonOneXThreeCenter.setOnClickListener {
             viewOverlay.setDividerType(DivideType.HORIZONTAL_CENTER_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.HORIZONTAL_CENTER_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonOneXThreeTop.setOnClickListener{
+        adjustmentButtonOneXThreeTop.setOnClickListener {
             viewOverlay.setDividerType(DivideType.HORIZONTAL_TOP_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.HORIZONTAL_TOP_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonOneXThreeBot.setOnClickListener{
+        adjustmentButtonOneXThreeBot.setOnClickListener {
             viewOverlay.setDividerType(DivideType.HORIZONTAL_BOT_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.HORIZONTAL_BOT_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonThreeXOneCenter.setOnClickListener{
+        adjustmentButtonThreeXOneCenter.setOnClickListener {
             viewOverlay.setDividerType(DivideType.VERTICAL_CENTER_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.VERTICAL_CENTER_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonThreeXOneLeft.setOnClickListener{
+        adjustmentButtonThreeXOneLeft.setOnClickListener {
             viewOverlay.setDividerType(DivideType.VERTICAL_LEFT_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.VERTICAL_LEFT_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
 
-        adjustmentButtonThreeXOneRight.setOnClickListener{
+        adjustmentButtonThreeXOneRight.setOnClickListener {
             viewOverlay.setDividerType(DivideType.VERTICAL_RIGHT_DIVIDE)
+            (activity as MainActivity).selectedImages[index].divideType = DivideType.VERTICAL_RIGHT_DIVIDE
+            adjustmentAdapter?.notifyItemChanged(index)
         }
     }
 
@@ -99,11 +118,8 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
         changeCropType(1f / 1f)
     }
 
+    //Scale disabled
     override fun onScale(currentScale: Float) {
-
-    }
-
-    override fun onLoadFailure(e: Exception) {
 
     }
 

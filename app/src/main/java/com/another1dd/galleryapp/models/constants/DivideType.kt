@@ -8,4 +8,5 @@ object DivideType {
     const val HORIZONTAL_TOP_DIVIDE = 3
     const val HORIZONTAL_CENTER_DIVIDE = 4
     const val HORIZONTAL_BOT_DIVIDE = 5
+    const val NINE_DIVIDE = 9
 }

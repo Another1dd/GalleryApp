@@ -9,6 +9,7 @@ import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.gone
 import com.another1dd.galleryapp.extensions.visible
 import com.another1dd.galleryapp.models.Image
+import com.another1dd.galleryapp.models.constants.DivideType
 import com.another1dd.galleryapp.utils.rx.RxArrayList
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.adjustment_item.view.*
@@ -48,6 +49,20 @@ class AdjustmentAdapter(private val context: Context,
 
                     notifyItemChanged(oldSelectedIndex)
                     notifyItemChanged(selectedImageIndex)
+                }
+            }
+
+            when (image.divideType){
+                DivideType.NO_DIVIDE ->{
+                    itemView.adjustmentSplitBlock.gone()
+                }
+                DivideType.NINE_DIVIDE ->{
+                    itemView.adjustmentSplitBlock.visible()
+                    itemView.adjustmentSplitTv.text = "9"
+                }
+                else ->{
+                    itemView.adjustmentSplitBlock.visible()
+                    itemView.adjustmentSplitTv.text = "3"
                 }
             }
         }

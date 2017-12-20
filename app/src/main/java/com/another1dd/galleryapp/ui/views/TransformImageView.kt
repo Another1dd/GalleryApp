@@ -77,8 +77,6 @@ open class TransformImageView : ImageView {
     interface TransformImageListener {
         fun onLoadComplete()
 
-        fun onLoadFailure(e: Exception)
-
         fun onScale(currentScale: Float)
     }
 
