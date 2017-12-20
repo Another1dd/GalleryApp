@@ -16,18 +16,18 @@ class GestureCropImageView : CropImageView {
     private var mScaleDetector: ScaleGestureDetector? = null
     private var mGestureDetector: GestureDetector? = null
 
-    private var mMidPntX: Float = 0.toFloat()
-    private var mMidPntY: Float = 0.toFloat()
+    private var mMidPntX: Float = 0f
+    private var mMidPntY: Float = 0f
 
-    var isScaleEnabled = true
-    var doubleTapScaleSteps = 5
+    var isScaleEnabled = false
+    private var doubleTapScaleSteps = 5
 
     /**
      * This method calculates target scale value for double tap gesture.
      * User is able to zoom the image from min scale value
      * to the max scale value with [.mDoubleTapScaleSteps] double taps.
      */
-    protected val doubleTapTargetScale: Float
+    private val doubleTapTargetScale: Float
         get() =
             currentScale * Math.pow((maxScale / minScale).toDouble(), (1.0f / doubleTapScaleSteps).toDouble()).toFloat()
 
@@ -75,7 +75,6 @@ class GestureCropImageView : CropImageView {
     }
 
     private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-
         override fun onScale(detector: ScaleGestureDetector): Boolean {
             postScale(detector.scaleFactor, mMidPntX, mMidPntY)
             return true
@@ -84,7 +83,9 @@ class GestureCropImageView : CropImageView {
 
     private inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
         override fun onDoubleTap(e: MotionEvent): Boolean {
-            zoomImageToPosition(doubleTapTargetScale, e.x, e.y, DOUBLE_TAP_ZOOM_DURATION.toLong())
+            if (isScaleEnabled) {
+                zoomImageToPosition(doubleTapTargetScale, e.x, e.y, DOUBLE_TAP_ZOOM_DURATION.toLong())
+            }
             return super.onDoubleTap(e)
         }
 

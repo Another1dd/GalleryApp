@@ -31,7 +31,7 @@ open class CropImageView : TransformImageView {
 
     private val mTempMatrix = Matrix()
 
-    private var mTargetAspectRatio: Float = 0.toFloat()
+    private var mTargetAspectRatio: Float = 0f
     private var mMaxScaleMultiplier = DEFAULT_MAX_SCALE_MULTIPLIER
 
     var cropBoundsChangeListener: CropBoundsChangeListener? = null
@@ -179,7 +179,7 @@ open class CropImageView : TransformImageView {
     /**
      * This method scales image down for given value related given coords (x, y).
      */
-    fun zoomOutImage(scale: Float, centerX: Float, centerY: Float) {
+    private fun zoomOutImage(scale: Float, centerX: Float, centerY: Float) {
         if (scale >= minScale) {
             postScale(scale / currentScale, centerX, centerY)
         }
@@ -366,7 +366,7 @@ open class CropImageView : TransformImageView {
      * @param imageCorners - corners of a rectangle
      * @return - true if it wraps crop bounds, false - otherwise
      */
-    protected fun isImageWrapCropBounds(imageCorners: FloatArray): Boolean {
+    private fun isImageWrapCropBounds(imageCorners: FloatArray): Boolean {
         mTempMatrix.reset()
         mTempMatrix.setRotate(-currentAngle)
 
@@ -449,8 +449,8 @@ open class CropImageView : TransformImageView {
      * Those are used to configure the view.
      */
     fun processStyledAttributes( a: TypedArray) {
-        val targetAspectRatioX = Math.abs(a.getFloat(R.styleable.UCropView_aspect_ratio_x, DEFAULT_ASPECT_RATIO))
-        val targetAspectRatioY = Math.abs(a.getFloat(R.styleable.UCropView_aspect_ratio_y, DEFAULT_ASPECT_RATIO))
+        val targetAspectRatioX = Math.abs(a.getFloat(R.styleable.RedactorView_aspect_ratio_x, DEFAULT_ASPECT_RATIO))
+        val targetAspectRatioY = Math.abs(a.getFloat(R.styleable.RedactorView_aspect_ratio_y, DEFAULT_ASPECT_RATIO))
 
         mTargetAspectRatio = if (targetAspectRatioX == SOURCE_IMAGE_ASPECT_RATIO || targetAspectRatioY == SOURCE_IMAGE_ASPECT_RATIO) {
             SOURCE_IMAGE_ASPECT_RATIO

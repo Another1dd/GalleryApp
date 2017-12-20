@@ -16,7 +16,7 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 
 
-class OverlayView : View {
+open class OverlayView : View {
     companion object {
         const val FREESTYLE_CROP_MODE_DISABLE = 0
         const val FREESTYLE_CROP_MODE_ENABLE = 1
@@ -33,10 +33,10 @@ class OverlayView : View {
     val cropViewRect = RectF()
     private val mTempRect = RectF()
 
-    protected var mThisWidth: Int = 0
-    protected var mThisHeight: Int = 0
-    protected lateinit var mCropGridCorners: FloatArray
-    protected lateinit var mCropGridCenter: FloatArray
+    private var mThisWidth: Int = 0
+    private var mThisHeight: Int = 0
+    private lateinit var mCropGridCorners: FloatArray
+    private lateinit var mCropGridCenter: FloatArray
 
     private var mCropGridRowCount: Int = 0
     private var mCropGridColumnCount: Int = 0
@@ -236,7 +236,7 @@ class OverlayView : View {
         }
     }
 
-    protected override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         var mLeft = left
         var mTop = top
         var mRight = right
@@ -260,7 +260,7 @@ class OverlayView : View {
     /**
      * Along with image there are dimmed layer, crop bounds and crop guidelines that must be drawn.
      */
-    protected override fun onDraw(canvas: Canvas) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         drawDimmedLayer(canvas)
         drawCropGrid(canvas)
@@ -385,22 +385,6 @@ class OverlayView : View {
         return if (mFreestyleCropMode == FREESTYLE_CROP_MODE_ENABLE && closestPointIndex < 0 && cropViewRect.contains(touchX, touchY)) {
             4
         } else closestPointIndex
-
-        //        for (int i = 0; i <= 8; i += 2) {
-        //
-        //            double distanceToCorner;
-        //            if (i < 8) { // corners
-        //                distanceToCorner = Math.sqrt(Math.pow(touchX - mCropGridCorners[i], 2)
-        //                        + Math.pow(touchY - mCropGridCorners[i + 1], 2));
-        //            } else { // center
-        //                distanceToCorner = Math.sqrt(Math.pow(touchX - mCropGridCenter[0], 2)
-        //                        + Math.pow(touchY - mCropGridCenter[1], 2));
-        //            }
-        //            if (distanceToCorner < closestPointDistance) {
-        //                closestPointDistance = distanceToCorner;
-        //                closestPointIndex = i / 2;
-        //            }
-        //        }
     }
 
     /**
@@ -408,7 +392,7 @@ class OverlayView : View {
      *
      * @param canvas - valid canvas object
      */
-    protected fun drawDimmedLayer(canvas: Canvas) {
+    private fun drawDimmedLayer(canvas: Canvas) {
         canvas.save()
         if (mCircleDimmedLayer) {
             canvas.clipPath(mCircularPath, Region.Op.DIFFERENCE)
@@ -430,7 +414,7 @@ class OverlayView : View {
      *
      * @param canvas - valid canvas object
      */
-    protected fun drawCropGrid(canvas: Canvas) {
+    private fun drawCropGrid(canvas: Canvas) {
         if (mShowCropGrid) {
             if (mGridPoints == null && !cropViewRect.isEmpty) {
 
@@ -483,27 +467,27 @@ class OverlayView : View {
      * Those are used to configure the view.
      */
     fun processStyledAttributes(a: TypedArray) {
-        mCircleDimmedLayer = a.getBoolean(R.styleable.UCropView_circle_dimmed_layer, DEFAULT_CIRCLE_DIMMED_LAYER)
-        mDimmedColor = a.getColor(R.styleable.UCropView_dimmed_color,
+        mCircleDimmedLayer = a.getBoolean(R.styleable.RedactorView_circle_dimmed_layer, DEFAULT_CIRCLE_DIMMED_LAYER)
+        mDimmedColor = a.getColor(R.styleable.RedactorView_dimmed_color,
                 resources.getColor(R.color.color_default_dimmed))
         mDimmedStrokePaint.color = mDimmedColor
         mDimmedStrokePaint.style = Paint.Style.STROKE
         mDimmedStrokePaint.strokeWidth = 1f
 
         initCropFrameStyle(a)
-        mShowCropFrame = a.getBoolean(R.styleable.UCropView_show_frame, DEFAULT_SHOW_CROP_FRAME)
+        mShowCropFrame = a.getBoolean(R.styleable.RedactorView_show_frame, DEFAULT_SHOW_CROP_FRAME)
 
         initCropGridStyle(a)
-        mShowCropGrid = a.getBoolean(R.styleable.UCropView_show_grid, DEFAULT_SHOW_CROP_GRID)
+        mShowCropGrid = a.getBoolean(R.styleable.RedactorView_show_grid, DEFAULT_SHOW_CROP_GRID)
     }
 
     /**
      * This method setups Paint object for the crop bounds.
      */
     private fun initCropFrameStyle(a: TypedArray) {
-        val cropFrameStrokeSize = a.getDimensionPixelSize(R.styleable.UCropView_frame_stroke_size,
+        val cropFrameStrokeSize = a.getDimensionPixelSize(R.styleable.RedactorView_frame_stroke_size,
                 resources.getDimensionPixelSize(R.dimen.default_crop_frame_stoke_width))
-        val cropFrameColor = a.getColor(R.styleable.UCropView_frame_color,
+        val cropFrameColor = a.getColor(R.styleable.RedactorView_frame_color,
                 resources.getColor(R.color.color_default_crop_frame))
         mCropFramePaint.strokeWidth = cropFrameStrokeSize.toFloat()
         mCropFramePaint.color = cropFrameColor
@@ -518,15 +502,15 @@ class OverlayView : View {
      * This method setups Paint object for the crop guidelines.
      */
     private fun initCropGridStyle(a: TypedArray) {
-        val cropGridStrokeSize = a.getDimensionPixelSize(R.styleable.UCropView_grid_stroke_size,
+        val cropGridStrokeSize = a.getDimensionPixelSize(R.styleable.RedactorView_grid_stroke_size,
                 resources.getDimensionPixelSize(R.dimen.default_crop_grid_stoke_width))
-        val cropGridColor = a.getColor(R.styleable.UCropView_grid_color,
+        val cropGridColor = a.getColor(R.styleable.RedactorView_grid_color,
                 resources.getColor(R.color.color_default_crop_grid))
         mCropGridPaint.strokeWidth = cropGridStrokeSize.toFloat()
         mCropGridPaint.color = cropGridColor
 
-        mCropGridRowCount = a.getInt(R.styleable.UCropView_grid_row_count, DEFAULT_CROP_GRID_ROW_COUNT)
-        mCropGridColumnCount = a.getInt(R.styleable.UCropView_grid_column_count, DEFAULT_CROP_GRID_COLUMN_COUNT)
+        mCropGridRowCount = a.getInt(R.styleable.RedactorView_grid_row_count, DEFAULT_CROP_GRID_ROW_COUNT)
+        mCropGridColumnCount = a.getInt(R.styleable.RedactorView_grid_column_count, DEFAULT_CROP_GRID_COLUMN_COUNT)
     }
 
 

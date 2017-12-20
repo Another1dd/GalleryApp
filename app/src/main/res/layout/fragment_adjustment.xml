@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     tools:context="com.another1dd.galleryapp.ui.fragments.AdjustmentFragment">
 
-    <com.another1dd.galleryapp.ui.views.UCropView
-        android:id="@+id/adjustmentCropView"
+    <com.another1dd.galleryapp.ui.views.RedactorView
+        android:id="@+id/adjustmentRedactorView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@null"
+        android:padding="5dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adjustmentCropView">
+        app:layout_constraintTop_toBottomOf="@id/adjustmentRedactorView">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/adjustmentButtonsBlock"

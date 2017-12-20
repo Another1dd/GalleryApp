@@ -120,7 +120,7 @@ object BitmapLoadUtils {
     }
 
     fun close(c: Closeable?) {
-        if (c != null) { // java.lang.IncompatibleClassChangeError: interface not implemented
+        if (c != null) {
             try {
                 c.close()
             } catch (e: IOException) {

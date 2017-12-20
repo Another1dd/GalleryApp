@@ -15,8 +15,8 @@ import com.another1dd.galleryapp.ui.adapters.adjustment.AdjustmentAdapter
 import com.another1dd.galleryapp.ui.adapters.adjustment.AdjustmentItemDecorator
 import com.another1dd.galleryapp.ui.adapters.order.LinearLayoutManagerWrapper
 import com.another1dd.galleryapp.ui.views.TransformImageView
-import kotlinx.android.synthetic.main.crop_view.*
 import kotlinx.android.synthetic.main.fragment_adjustment.*
+import kotlinx.android.synthetic.main.redactor_view.*
 import java.io.File
 import java.lang.Exception
 
@@ -44,14 +44,14 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
             //            Glide.with(this@AdjustmentFragment.activity).load((activity as MainActivity).selectedImages[index].path)
 //                    .centerCrop().into(adjustmentRedactorIv)
             val uri = Uri.fromFile(File((activity as MainActivity).selectedImages[index].path))
-            imageViewCrop.setImageUri(uri, uri)
+//            imageViewCrop.setImageUri(uri, uri)
+            adjustmentRedactorView.resetCropImageView(uri, uri)
         })
         adjustmentRecyclerView.adapter = adjustmentAdapter
         adjustmentRecyclerView.addItemDecoration(AdjustmentItemDecorator(25))
     }
 
     private fun initCropView() {
-        imageViewCrop.isScaleEnabled = true
         imageViewCrop.setImageToWrapCropBounds(true)
         imageViewCrop.setTransformImageListener(this)
 

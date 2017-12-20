@@ -45,19 +45,13 @@ open class TransformImageView : ImageView {
     var imageOutputPath: String? = null
     var exifInfo: ExifInfo? = null
 
-    /**
-     * Setter for [.mMaxBitmapSize] value.
-     * Be sure to call it before [.setImageURI] or other image setters.
-     *
-     * @param maxBitmapSize - max size for both width and height of bitmap that will be used in the view.
-     */
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-    var maxBitmapSize = 0
+    private var maxBitmapSize = 0
         get() {
             if (field <= 0) {
                 maxBitmapSize = BitmapLoadUtils.calculateMaxBitmapSize(context)
@@ -86,8 +80,12 @@ open class TransformImageView : ImageView {
             (drawable as FastBitmapDrawable).bitmap
         }
 
+    init {
+        scaleType = ScaleType.MATRIX
+    }
+
     /**
-     * Interface for rotation and scale change notifying.
+     * Interface for scale change notifying.
      */
     interface TransformImageListener {
         fun onLoadComplete()
@@ -146,14 +144,14 @@ open class TransformImageView : ImageView {
     /**
      * This method calculates scale value for given Matrix object.
      */
-    fun getMatrixScale(matrix: Matrix): Float {
+    private fun getMatrixScale(matrix: Matrix): Float {
         return Math.sqrt(Math.pow(getMatrixValue(matrix, Matrix.MSCALE_X).toDouble(), 2.0) + Math.pow(getMatrixValue(matrix, Matrix.MSKEW_Y).toDouble(), 2.0)).toFloat()
     }
 
     /**
      * This method calculates rotation angle for given Matrix object.
      */
-    fun getMatrixAngle(matrix: Matrix): Float {
+    private fun getMatrixAngle(matrix: Matrix): Float {
         return (-(Math.atan2(getMatrixValue(matrix, Matrix.MSKEW_X).toDouble(),
                 getMatrixValue(matrix, Matrix.MSCALE_X).toDouble()) * (180 / Math.PI))).toFloat()
     }
@@ -194,11 +192,7 @@ open class TransformImageView : ImageView {
         }
     }
 
-    init {
-        scaleType = ScaleType.MATRIX
-    }
-
-    protected override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         var leftPad = left
         var topPad = top
         var rightPad = right
@@ -246,7 +240,7 @@ open class TransformImageView : ImageView {
      * @param valueIndex - index of needed value. See [Matrix.MSCALE_X] and others.
      * @return - matrix value for index
      */
-    protected fun getMatrixValue(matrix: Matrix, valueIndex: Int): Float {
+    private fun getMatrixValue(matrix: Matrix, valueIndex: Int): Float {
         matrix.getValues(mMatrixValues)
         return mMatrixValues[valueIndex]
     }
