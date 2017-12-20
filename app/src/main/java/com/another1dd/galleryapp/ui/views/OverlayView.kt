@@ -2,57 +2,56 @@ package com.another1dd.galleryapp.ui.views
 
 import android.content.Context
 import android.content.res.TypedArray
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.RectF
+import android.graphics.Region
 import android.os.Build
-import android.support.annotation.ColorInt
-import android.support.annotation.IntDef
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import com.another1dd.galleryapp.R
+import com.another1dd.galleryapp.models.constants.DivideType
 import com.another1dd.galleryapp.utils.redactor.RectUtils
 import com.another1dd.galleryapp.utils.redactor.callback.OverlayViewChangeListener
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 
 
 open class OverlayView : View {
     companion object {
-        const val FREESTYLE_CROP_MODE_DISABLE = 0
-        const val FREESTYLE_CROP_MODE_ENABLE = 1
-        const val FREESTYLE_CROP_MODE_ENABLE_WITH_PASS_THROUGH = 2
-
-        const val DEFAULT_SHOW_CROP_FRAME = true
         const val DEFAULT_SHOW_CROP_GRID = true
-        const val DEFAULT_CIRCLE_DIMMED_LAYER = false
-        const val DEFAULT_FREESTYLE_CROP_MODE = FREESTYLE_CROP_MODE_DISABLE
+        const val DEFAULT_SHOW_DIVIDER_GRID = false
         const val DEFAULT_CROP_GRID_ROW_COUNT = 2
         const val DEFAULT_CROP_GRID_COLUMN_COUNT = 2
+        const val DEFAULT_DIVIDER_GRID_ROW_COUNT = 2
+        const val DEFAULT_DIVIDER_GRID_COLUMN_COUNT = 2
     }
 
     val cropViewRect = RectF()
+    private val dividerViewRect = RectF()
     private val mTempRect = RectF()
 
     private var mThisWidth: Int = 0
     private var mThisHeight: Int = 0
     private lateinit var mCropGridCorners: FloatArray
     private lateinit var mCropGridCenter: FloatArray
+    private lateinit var mDividerGridCorners: FloatArray
+    private lateinit var mDividerGridCenter: FloatArray
 
     private var mCropGridRowCount: Int = 0
     private var mCropGridColumnCount: Int = 0
-    private var mTargetAspectRatio: Float = 0.toFloat()
+    private var mDividerGridRowCount: Int = 0
+    private var mDividerGridColumnCount: Int = 0
+    private var mTargetAspectRatio = 0f
     private var mGridPoints: FloatArray? = null
-    private var mShowCropFrame: Boolean = false
+    private var mDividerGridPoints: FloatArray? = null
     private var mShowCropGrid: Boolean = false
-    private var mCircleDimmedLayer: Boolean = false
+    private var mShowDividerGrid: Boolean = false
+    private var mDividerType: Int = DivideType.NO_DIVIDE
     private var mDimmedColor: Int = 0
-    private val mCircularPath = Path()
     private val mDimmedStrokePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mCropGridPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val mCropFramePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val mCropFrameCornersPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    @FreestyleMode
-    private var mFreestyleCropMode = DEFAULT_FREESTYLE_CROP_MODE
+    private val mDividerGridPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val mDividerPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var mPreviousTouchX = -1f
     private var mPreviousTouchY = -1f
     private var mCurrentTouchCornerIndex = -1
@@ -62,35 +61,13 @@ open class OverlayView : View {
 
     var overlayViewChangeListener: OverlayViewChangeListener? = null
 
-    private var mShouldSetupCropBounds: Boolean = false
+    private var mShouldSetupCropAndDividerBounds: Boolean = false
 
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
-
-    /***
-     * Please use the new method [getFreestyleCropMode][.getFreestyleCropMode] method as we have more than 1 freestyle crop mode.
-     */
-    /***
-     * Please use the new method [setFreestyleCropMode][.setFreestyleCropMode] method as we have more than 1 freestyle crop mode.
-     */
-    var isFreestyleCropEnabled: Boolean
-        @Deprecated("")
-        get() = mFreestyleCropMode == FREESTYLE_CROP_MODE_ENABLE
-        @Deprecated("")
-        set(freestyleCropEnabled) {
-            mFreestyleCropMode = if (freestyleCropEnabled) FREESTYLE_CROP_MODE_ENABLE else FREESTYLE_CROP_MODE_DISABLE
-        }
-
-    var freestyleCropMode: Int
-        @FreestyleMode
-        get() = mFreestyleCropMode
-        set(@FreestyleMode mFreestyleCropMode) {
-            this.mFreestyleCropMode = mFreestyleCropMode
-            postInvalidate()
-        }
 
     init {
         mTouchPointThreshold = resources.getDimensionPixelSize(R.dimen.default_crop_rect_corner_touch_threshold)
@@ -99,86 +76,16 @@ open class OverlayView : View {
     }
 
 
-    /**
-     * Setter for [.mCircleDimmedLayer] variable.
-     *
-     * @param circleDimmedLayer - set it to true if you want dimmed layer to be an circle
-     */
-    fun setCircleDimmedLayer(circleDimmedLayer: Boolean) {
-        mCircleDimmedLayer = circleDimmedLayer
+    fun setShowDividerGrid(show: Boolean) {
+        mShowDividerGrid = show
+        mDividerType = DivideType.NO_DIVIDE
+        postInvalidate()
     }
 
-    /**
-     * Setter for crop grid rows count.
-     * Resets [.mGridPoints] variable because it is not valid anymore.
-     */
-    fun setCropGridRowCount(cropGridRowCount: Int) {
-        mCropGridRowCount = cropGridRowCount
-        mGridPoints = null
-    }
-
-    /**
-     * Setter for crop grid columns count.
-     * Resets [.mGridPoints] variable because it is not valid anymore.
-     */
-    fun setCropGridColumnCount(cropGridColumnCount: Int) {
-        mCropGridColumnCount = cropGridColumnCount
-        mGridPoints = null
-    }
-
-    /**
-     * Setter for [.mShowCropFrame] variable.
-     *
-     * @param showCropFrame - set to true if you want to see a crop frame rectangle on top of an image
-     */
-    fun setShowCropFrame(showCropFrame: Boolean) {
-        mShowCropFrame = showCropFrame
-    }
-
-    /**
-     * Setter for [.mShowCropGrid] variable.
-     *
-     * @param showCropGrid - set to true if you want to see a crop grid on top of an image
-     */
-    fun setShowCropGrid(showCropGrid: Boolean) {
-        mShowCropGrid = showCropGrid
-    }
-
-    /**
-     * Setter for [.mDimmedColor] variable.
-     *
-     * @param dimmedColor - desired color of dimmed area around the crop bounds
-     */
-    fun setDimmedColor(@ColorInt dimmedColor: Int) {
-        mDimmedColor = dimmedColor
-    }
-
-    /**
-     * Setter for crop frame stroke width
-     */
-    fun setCropFrameStrokeWidth(width: Int) {
-        mCropFramePaint.strokeWidth = width.toFloat()
-    }
-
-    /**
-     * Setter for crop grid stroke width
-     */
-    fun setCropGridStrokeWidth(width: Int) {
-        mCropGridPaint.strokeWidth = width.toFloat()
-    }
-
-    /**
-     * Setter for crop frame color
-     */
-    fun setCropFrameColor(@ColorInt color: Int) {
-        mCropFramePaint.color = color
-    }
-
-    /**
-     * Setter for crop grid color
-     */
-    fun setCropGridColor(@ColorInt color: Int) {
-        mCropGridPaint.color = color
+    fun setDividerType(dividerType: Int) {
+        mShowDividerGrid = true
+        mDividerType = dividerType
+        postInvalidate()
     }
 
     /**
@@ -189,10 +96,10 @@ open class OverlayView : View {
     fun setTargetAspectRatio(targetAspectRatio: Float) {
         mTargetAspectRatio = targetAspectRatio
         if (mThisWidth > 0) {
-            setupCropBounds()
+            setupCropAndDividerBounds()
             postInvalidate()
         } else {
-            mShouldSetupCropBounds = true
+            mShouldSetupCropAndDividerBounds = true
         }
     }
 
@@ -200,24 +107,29 @@ open class OverlayView : View {
      * This method setups crop bounds rectangles for given aspect ratio and view size.
      * [.mCropViewRect] is used to draw crop bounds - uses padding.
      */
-    fun setupCropBounds() {
+    private fun setupCropAndDividerBounds() {
         val height = (mThisWidth / mTargetAspectRatio).toInt()
         if (height > mThisHeight) {
             val width = (mThisHeight * mTargetAspectRatio).toInt()
             val halfDiff = (mThisWidth - width) / 2
             cropViewRect.set(paddingLeft.toFloat() + halfDiff, paddingTop.toFloat(),
                     paddingLeft.toFloat() + width + halfDiff, paddingTop.toFloat() + mThisHeight)
+            dividerViewRect.set(paddingLeft.toFloat() + halfDiff, paddingTop.toFloat(),
+                    paddingLeft.toFloat() + width + halfDiff, paddingTop.toFloat() + mThisHeight)
         } else {
             val halfDiff = (mThisHeight - height) / 2
             cropViewRect.set(paddingLeft.toFloat(), paddingTop.toFloat() + halfDiff,
                     paddingLeft.toFloat() + mThisWidth, paddingTop.toFloat() + height + halfDiff)
+            dividerViewRect.set(paddingLeft.toFloat(), paddingTop.toFloat() + halfDiff,
+                    paddingLeft.toFloat() + mThisWidth, paddingTop.toFloat() + height + halfDiff)
         }
 
         if (overlayViewChangeListener != null) {
-            overlayViewChangeListener!!.onCropRectUpdated(cropViewRect)
+            overlayViewChangeListener?.onCropRectUpdated(cropViewRect)
         }
 
         updateGridPoints()
+        updateDividerGridPoints()
     }
 
     private fun updateGridPoints() {
@@ -225,9 +137,13 @@ open class OverlayView : View {
         mCropGridCenter = RectUtils.getCenterFromRect(cropViewRect)
 
         mGridPoints = null
-        mCircularPath.reset()
-        mCircularPath.addCircle(cropViewRect.centerX(), cropViewRect.centerY(),
-                Math.min(cropViewRect.width(), cropViewRect.height()) / 2f, Path.Direction.CW)
+    }
+
+    private fun updateDividerGridPoints() {
+        mDividerGridCorners = RectUtils.getCornersFromRect(dividerViewRect)
+        mDividerGridCenter = RectUtils.getCenterFromRect(dividerViewRect)
+
+        mDividerGridPoints = null
     }
 
     init {
@@ -250,8 +166,8 @@ open class OverlayView : View {
             mThisWidth = mRight - mLeft
             mThisHeight = mBottom - mTop
 
-            if (mShouldSetupCropBounds) {
-                mShouldSetupCropBounds = false
+            if (mShouldSetupCropAndDividerBounds) {
+                mShouldSetupCropAndDividerBounds = false
                 setTargetAspectRatio(mTargetAspectRatio)
             }
         }
@@ -264,10 +180,11 @@ open class OverlayView : View {
         super.onDraw(canvas)
         drawDimmedLayer(canvas)
         drawCropGrid(canvas)
+        drawDividerGrid(canvas)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (cropViewRect.isEmpty || mFreestyleCropMode == FREESTYLE_CROP_MODE_DISABLE) {
+        if (cropViewRect.isEmpty) {
             return false
         }
 
@@ -382,9 +299,7 @@ open class OverlayView : View {
             i += 2
         }
 
-        return if (mFreestyleCropMode == FREESTYLE_CROP_MODE_ENABLE && closestPointIndex < 0 && cropViewRect.contains(touchX, touchY)) {
-            4
-        } else closestPointIndex
+        return closestPointIndex
     }
 
     /**
@@ -394,18 +309,9 @@ open class OverlayView : View {
      */
     private fun drawDimmedLayer(canvas: Canvas) {
         canvas.save()
-        if (mCircleDimmedLayer) {
-            canvas.clipPath(mCircularPath, Region.Op.DIFFERENCE)
-        } else {
-            canvas.clipRect(cropViewRect, Region.Op.DIFFERENCE)
-        }
+        canvas.clipRect(cropViewRect, Region.Op.DIFFERENCE)
         canvas.drawColor(mDimmedColor)
         canvas.restore()
-
-        if (mCircleDimmedLayer) { // Draw 1px stroke to fix antialias
-            canvas.drawCircle(cropViewRect.centerX(), cropViewRect.centerY(),
-                    Math.min(cropViewRect.width(), cropViewRect.height()) / 2f, mDimmedStrokePaint)
-        }
     }
 
     /**
@@ -440,25 +346,62 @@ open class OverlayView : View {
                 canvas.drawLines(mGridPoints, mCropGridPaint)
             }
         }
+    }
 
-        if (mShowCropFrame) {
-            canvas.drawRect(cropViewRect, mCropFramePaint)
-        }
+    /**
+     * This method draws divider bounds (empty rectangle)
+     * and divider guidelines (vertical and horizontal lines inside the crop bounds) if needed.
+     *
+     * @param canvas - valid canvas object
+     */
+    private fun drawDividerGrid(canvas: Canvas) {
+        if (mShowDividerGrid) {
+            if (mDividerGridPoints == null && !dividerViewRect.isEmpty) {
 
-        if (mFreestyleCropMode != FREESTYLE_CROP_MODE_DISABLE) {
-            canvas.save()
+                mDividerGridPoints = FloatArray(mDividerGridRowCount * 4 + mDividerGridColumnCount * 4)
 
-            mTempRect.set(cropViewRect)
-            mTempRect.inset(mCropRectCornerTouchAreaLineLength.toFloat(), (-mCropRectCornerTouchAreaLineLength).toFloat())
-            canvas.clipRect(mTempRect, Region.Op.DIFFERENCE)
+                var index = 0
+                for (i in 0 until mDividerGridRowCount) {
+                    mDividerGridPoints!![index++] = dividerViewRect.left
+                    mDividerGridPoints!![index++] = dividerViewRect.height() * ((i.toFloat() + 1.0f) / (mDividerGridRowCount + 1).toFloat()) + dividerViewRect.top
+                    mDividerGridPoints!![index++] = dividerViewRect.right
+                    mDividerGridPoints!![index++] = dividerViewRect.height() * ((i.toFloat() + 1.0f) / (mDividerGridRowCount + 1).toFloat()) + dividerViewRect.top
+                }
 
-            mTempRect.set(cropViewRect)
-            mTempRect.inset((-mCropRectCornerTouchAreaLineLength).toFloat(), mCropRectCornerTouchAreaLineLength.toFloat())
-            canvas.clipRect(mTempRect, Region.Op.DIFFERENCE)
+                for (i in 0 until mDividerGridColumnCount) {
+                    mDividerGridPoints!![index++] = dividerViewRect.width() * ((i.toFloat() + 1.0f) / (mDividerGridColumnCount + 1).toFloat()) + dividerViewRect.left
+                    mDividerGridPoints!![index++] = dividerViewRect.top
+                    mDividerGridPoints!![index++] = dividerViewRect.width() * ((i.toFloat() + 1.0f) / (mDividerGridColumnCount + 1).toFloat()) + dividerViewRect.left
+                    mDividerGridPoints!![index++] = dividerViewRect.bottom
+                }
+            }
 
-            canvas.drawRect(cropViewRect, mCropFrameCornersPaint)
+            if (mDividerGridPoints != null) {
+                canvas.drawLines(mDividerGridPoints, mDividerGridPaint)
 
-            canvas.restore()
+                when (mDividerType) {
+                    DivideType.VERTICAL_CENTER_DIVIDE -> {
+                        canvas.drawRect(0f, 0f, width / 3f, height.toFloat(), mDividerPaint)
+                        canvas.drawRect(width * 2 / 3f, 0f, width.toFloat(), height.toFloat(), mDividerPaint)
+                    }
+                    DivideType.VERTICAL_LEFT_DIVIDE -> {
+                        canvas.drawRect(width * 1 / 3f, 0f, width.toFloat(), height.toFloat(), mDividerPaint)
+                    }
+                    DivideType.VERTICAL_RIGHT_DIVIDE -> {
+                        canvas.drawRect(0f, 0f, width * 2 / 3f, height.toFloat(), mDividerPaint)
+                    }
+                    DivideType.HORIZONTAL_CENTER_DIVIDE -> {
+                        canvas.drawRect(0f, 0f, width.toFloat(), height / 3f, mDividerPaint)
+                        canvas.drawRect(0f, height * 2 / 3f, width.toFloat(), height.toFloat(), mDividerPaint)
+                    }
+                    DivideType.HORIZONTAL_TOP_DIVIDE -> {
+                        canvas.drawRect(0f, height * 1 / 3f, width.toFloat(), height.toFloat(), mDividerPaint)
+                    }
+                    DivideType.HORIZONTAL_BOT_DIVIDE -> {
+                        canvas.drawRect(0f, 0f, width.toFloat(), height * 2 / 3f, mDividerPaint)
+                    }
+                }
+            }
         }
     }
 
@@ -467,36 +410,19 @@ open class OverlayView : View {
      * Those are used to configure the view.
      */
     fun processStyledAttributes(a: TypedArray) {
-        mCircleDimmedLayer = a.getBoolean(R.styleable.RedactorView_circle_dimmed_layer, DEFAULT_CIRCLE_DIMMED_LAYER)
         mDimmedColor = a.getColor(R.styleable.RedactorView_dimmed_color,
                 resources.getColor(R.color.color_default_dimmed))
         mDimmedStrokePaint.color = mDimmedColor
         mDimmedStrokePaint.style = Paint.Style.STROKE
         mDimmedStrokePaint.strokeWidth = 1f
 
-        initCropFrameStyle(a)
-        mShowCropFrame = a.getBoolean(R.styleable.RedactorView_show_frame, DEFAULT_SHOW_CROP_FRAME)
-
         initCropGridStyle(a)
+        initDividersGridStyle(a)
+        initDividerRectStyle(a)
         mShowCropGrid = a.getBoolean(R.styleable.RedactorView_show_grid, DEFAULT_SHOW_CROP_GRID)
+        mShowDividerGrid = a.getBoolean(R.styleable.RedactorView_show_divider_grid, DEFAULT_SHOW_DIVIDER_GRID)
     }
 
-    /**
-     * This method setups Paint object for the crop bounds.
-     */
-    private fun initCropFrameStyle(a: TypedArray) {
-        val cropFrameStrokeSize = a.getDimensionPixelSize(R.styleable.RedactorView_frame_stroke_size,
-                resources.getDimensionPixelSize(R.dimen.default_crop_frame_stoke_width))
-        val cropFrameColor = a.getColor(R.styleable.RedactorView_frame_color,
-                resources.getColor(R.color.color_default_crop_frame))
-        mCropFramePaint.strokeWidth = cropFrameStrokeSize.toFloat()
-        mCropFramePaint.color = cropFrameColor
-        mCropFramePaint.style = Paint.Style.STROKE
-
-        mCropFrameCornersPaint.strokeWidth = cropFrameStrokeSize * 3f
-        mCropFrameCornersPaint.color = cropFrameColor
-        mCropFrameCornersPaint.style = Paint.Style.STROKE
-    }
 
     /**
      * This method setups Paint object for the crop guidelines.
@@ -513,8 +439,22 @@ open class OverlayView : View {
         mCropGridColumnCount = a.getInt(R.styleable.RedactorView_grid_column_count, DEFAULT_CROP_GRID_COLUMN_COUNT)
     }
 
+    private fun initDividersGridStyle(a: TypedArray) {
+        val dividerStrokeSize = a.getDimensionPixelSize(R.styleable.RedactorView_divider_stroke_size,
+                resources.getDimensionPixelSize(R.dimen.default_divider_stoke_width))
+        val dividerColor = a.getColor(R.styleable.RedactorView_divider_grid_color,
+                resources.getColor(R.color.color_default_divider_grid))
+        mDividerGridPaint.strokeWidth = dividerStrokeSize.toFloat()
+        mDividerGridPaint.color = dividerColor
 
-    @Retention(RetentionPolicy.SOURCE)
-    @IntDef(FREESTYLE_CROP_MODE_DISABLE.toLong(), FREESTYLE_CROP_MODE_ENABLE.toLong(), FREESTYLE_CROP_MODE_ENABLE_WITH_PASS_THROUGH.toLong())
-    annotation class FreestyleMode
+        mDividerGridRowCount = a.getInt(R.styleable.RedactorView_divider_grid_row_count, DEFAULT_DIVIDER_GRID_ROW_COUNT)
+        mDividerGridColumnCount = a.getInt(R.styleable.RedactorView_grid_column_count, DEFAULT_DIVIDER_GRID_COLUMN_COUNT)
+    }
+
+    private fun initDividerRectStyle(a: TypedArray) {
+        val dividerRectColor = a.getColor(R.styleable.RedactorView_divider_color,
+                resources.getColor(R.color.color_default_divider))
+
+        mDividerPaint.color = dividerRectColor
+    }
 }

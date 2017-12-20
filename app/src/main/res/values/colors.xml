@@ -7,4 +7,20 @@
     <color name="gallerySelectedForeground">#33F6FF</color>
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00FFFF</color>
+
+    <color name="color_crop_background">#000</color>
+    <color name="color_default_crop_frame">#ffffff</color>
+    <color name="color_default_crop_grid">#80ffffff</color>
+    <color name="color_default_dimmed">#8c000000</color>
+    <color name="color_default_logo">#4f212121</color>
+    <color name="color_progress_wheel_line">#808080</color>
+    <color name="color_statusbar">#CC5833</color>
+    <color name="color_toolbar">#FF6E40</color>
+    <color name="color_toolbar_widget">#fff</color>
+    <color name="color_widget">#000</color>
+    <color name="color_widget_active">#FF6E40</color>
+    <color name="color_widget_background">#fff</color>
+    <color name="color_widget_text">#000</color>
+    <color name="color_default_divider_grid">#CCFFFFFF</color>
+    <color name="color_default_divider">#F2FFFFFF</color>
 </resources>

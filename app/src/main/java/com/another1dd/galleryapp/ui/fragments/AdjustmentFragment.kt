@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.another1dd.galleryapp.R
 import com.another1dd.galleryapp.extensions.inflate
+import com.another1dd.galleryapp.models.constants.DivideType
 import com.another1dd.galleryapp.ui.activities.MainActivity
 import com.another1dd.galleryapp.ui.adapters.adjustment.AdjustmentAdapter
 import com.another1dd.galleryapp.ui.adapters.adjustment.AdjustmentItemDecorator
@@ -32,6 +33,7 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
 
         initRecyclerView()
         initCropView()
+        initButtons()
     }
 
     private fun initRecyclerView() {
@@ -55,6 +57,40 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
             index = bundle.getInt("index")
             val image = (activity as MainActivity).selectedImages[index]
             imageViewCrop.setImageUri(image.path)
+        }
+    }
+
+    private fun initButtons() {
+        adjustmentButtonOneXOne.setOnClickListener {
+            viewOverlay.setShowDividerGrid(false)
+        }
+
+        adjustmentButtonThreeXThree.setOnClickListener {
+            viewOverlay.setShowDividerGrid(true)
+        }
+
+        adjustmentButtonOneXThreeCenter.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.HORIZONTAL_CENTER_DIVIDE)
+        }
+
+        adjustmentButtonOneXThreeTop.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.HORIZONTAL_TOP_DIVIDE)
+        }
+
+        adjustmentButtonOneXThreeBot.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.HORIZONTAL_BOT_DIVIDE)
+        }
+
+        adjustmentButtonThreeXOneCenter.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.VERTICAL_CENTER_DIVIDE)
+        }
+
+        adjustmentButtonThreeXOneLeft.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.VERTICAL_LEFT_DIVIDE)
+        }
+
+        adjustmentButtonThreeXOneRight.setOnClickListener{
+            viewOverlay.setDividerType(DivideType.VERTICAL_RIGHT_DIVIDE)
         }
     }
 

@@ -35,7 +35,7 @@ open class TransformImageView : ImageView {
     private var mInitialImageCorners: FloatArray? = null
     private var mInitialImageCenter: FloatArray? = null
 
-    protected var mBitmapDecoded = false
+    private var mBitmapDecoded = false
     protected var mBitmapLaidOut = false
 
     var imageInputPath: String? = null
