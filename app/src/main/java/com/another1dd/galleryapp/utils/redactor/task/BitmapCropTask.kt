@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.AsyncTask
 import android.util.Log
 import com.another1dd.galleryapp.models.redactor.CropParametres
-import com.another1dd.galleryapp.models.redactor.ExifInfo
 import com.another1dd.galleryapp.models.redactor.ImageState
 import com.another1dd.galleryapp.utils.redactor.FileUtils
 import com.another1dd.galleryapp.utils.redactor.ImageHeaderParser
@@ -31,7 +30,6 @@ class BitmapCropTask(private var mViewBitmap: Bitmap?, imageState: ImageState, c
     private val mCompressQuality: Int = cropParameters.mCompressQuality
     private val mImageInputPath: String? = cropParameters.mImageInputPath
     private val mImageOutputPath: String? = cropParameters.mImageOutputPath
-    private val mExifInfo: ExifInfo? = cropParameters.mExifInfo
 
     private var mCroppedImageWidth: Int = 0
     private var mCroppedImageHeight: Int = 0
@@ -66,9 +64,9 @@ class BitmapCropTask(private var mViewBitmap: Bitmap?, imageState: ImageState, c
         options.inJustDecodeBounds = true
         BitmapFactory.decodeFile(mImageInputPath, options)
 
-        val swapSides = mExifInfo?.mExifDegrees == 90 || mExifInfo?.mExifDegrees == 270
-        var scaleX = (if (swapSides) options.outHeight else options.outWidth) / mViewBitmap!!.width.toFloat()
-        var scaleY = (if (swapSides) options.outWidth else options.outHeight) / mViewBitmap!!.height.toFloat()
+
+        var scaleX = (options.outWidth) / mViewBitmap!!.width.toFloat()
+        var scaleY = (options.outHeight) / mViewBitmap!!.height.toFloat()
 
         var resizeScale = Math.min(scaleX, scaleY)
 
@@ -106,8 +104,7 @@ class BitmapCropTask(private var mViewBitmap: Bitmap?, imageState: ImageState, c
         return if (shouldCrop) {
             val cropped = cropCImg(mImageInputPath!!, mImageOutputPath!!,
                     cropOffsetX, cropOffsetY, mCroppedImageWidth, mCroppedImageHeight,
-                    mCurrentAngle, resizeScale, mCompressFormat!!.ordinal, mCompressQuality,
-                    mExifInfo!!.mExifDegrees, mExifInfo.mExifTranslation)
+                    mCurrentAngle, resizeScale, mCompressFormat!!.ordinal, mCompressQuality)
             if (cropped && mCompressFormat == Bitmap.CompressFormat.JPEG) {
                 ImageHeaderParser.copyExif(originalExif, mCroppedImageWidth, mCroppedImageHeight, mImageOutputPath)
             }
@@ -160,8 +157,7 @@ class BitmapCropTask(private var mViewBitmap: Bitmap?, imageState: ImageState, c
         external fun cropCImg(inputPath: String, outputPath: String,
                               left: Int, top: Int, width: Int, height: Int,
                               angle: Float, resizeScale: Float,
-                              format: Int, quality: Int,
-                              exifDegrees: Int, exifTranslation: Int): Boolean
+                              format: Int, quality: Int): Boolean
     }
 
 }

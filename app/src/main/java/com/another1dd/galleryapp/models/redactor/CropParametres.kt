@@ -10,5 +10,4 @@ data class CropParametres(
         var mCompressFormat: Bitmap.CompressFormat? = null,
         var mCompressQuality: Int = 0,
         var mImageInputPath: String? = null,
-        var mImageOutputPath: String? = null,
-        var mExifInfo: ExifInfo? = null)
+        var mImageOutputPath: String? = null)

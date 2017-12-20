@@ -141,7 +141,7 @@ class GalleryFragment : Fragment() {
             val path = cursor.getString(columnIndexData)
             val id = cursor.getLong(cursor.getColumnIndex(projection[0]))
             val name = cursor.getString(cursor.getColumnIndex(projection[1]))
-            val image = Image(id, name, path, true)
+            val image = Image(id, name, path, true, GalleryType.GALLERY)
             if (!(activity as MainActivity).selectedImages.contains(image)) {
                 image.isSelected = false
             }
@@ -196,7 +196,7 @@ class GalleryFragment : Fragment() {
             val image = it.user?.fullName?.let { it1 ->
                 it.images?.standardResolution?.url?.let { it2 ->
                     Image(0L, it1,
-                            it2, true)
+                            it2, true, GalleryType.INSTAGRAM)
                 }
             }
             if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
@@ -225,7 +225,8 @@ class GalleryFragment : Fragment() {
 
                     data.data?.forEach {
                         it.photos?.data?.forEach {
-                            val image = it.images?.first()?.source?.let { it1 -> Image(0L, null, it1, true) }
+                            val image = it.images?.first()?.source?.let { it1 -> Image(0L, null, it1,
+                                    true, GalleryType.FACEBOOK) }
 
                             if (image != null && !(activity as MainActivity).selectedImages.contains(image)) {
                                 image.isSelected = false
@@ -267,7 +268,7 @@ class GalleryFragment : Fragment() {
             if (resultCode == Activity.RESULT_OK) {
                 val result = DbxChooser.Result(data)
                 Log.d("DropBox", "Link to selected file: " + result.link)
-                val image = Image(0L, result.name, result.link.toString(), false)
+                val image = Image(0L, result.name, result.link.toString(), false, GalleryType.DROPBOX)
                 images.add(image)
                 galleryAdapter.setData(images)
                 galleryAdapter.notifyDataSetChanged()

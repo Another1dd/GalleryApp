@@ -2,7 +2,6 @@ package com.another1dd.galleryapp.ui.fragments
 
 
 import android.app.Fragment
-import android.net.Uri
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -17,7 +16,6 @@ import com.another1dd.galleryapp.ui.adapters.order.LinearLayoutManagerWrapper
 import com.another1dd.galleryapp.ui.views.TransformImageView
 import kotlinx.android.synthetic.main.fragment_adjustment.*
 import kotlinx.android.synthetic.main.redactor_view.*
-import java.io.File
 import java.lang.Exception
 
 
@@ -41,11 +39,8 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
         adjustmentRecyclerView.layoutManager = linearLayoutManager
 
         val adjustmentAdapter = AdjustmentAdapter(activity, (activity as MainActivity).selectedImages, index, { index ->
-            //            Glide.with(this@AdjustmentFragment.activity).load((activity as MainActivity).selectedImages[index].path)
-//                    .centerCrop().into(adjustmentRedactorIv)
-            val uri = Uri.fromFile(File((activity as MainActivity).selectedImages[index].path))
-//            imageViewCrop.setImageUri(uri, uri)
-            adjustmentRedactorView.resetCropImageView(uri, uri)
+            val image = (activity as MainActivity).selectedImages[index]
+            adjustmentRedactorView.resetCropImageView(image.path)
         })
         adjustmentRecyclerView.adapter = adjustmentAdapter
         adjustmentRecyclerView.addItemDecoration(AdjustmentItemDecorator(25))
@@ -58,10 +53,8 @@ class AdjustmentFragment : Fragment(), TransformImageView.TransformImageListener
         val bundle = this.arguments
         if (bundle != null) {
             index = bundle.getInt("index")
-//            Glide.with(activity).load((activity as MainActivity).selectedImages[index].path)
-//                    .centerCrop().into(adjustmentRedactorIv)
-            val uri = Uri.fromFile(File((activity as MainActivity).selectedImages[index].path))
-            imageViewCrop.setImageUri(uri, uri)
+            val image = (activity as MainActivity).selectedImages[index]
+            imageViewCrop.setImageUri(image.path)
         }
     }
 

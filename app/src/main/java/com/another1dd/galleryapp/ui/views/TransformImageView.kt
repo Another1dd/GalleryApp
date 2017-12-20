@@ -4,15 +4,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.graphics.RectF
-import android.net.Uri
 import android.util.AttributeSet
 import android.util.Log
 import android.widget.ImageView
-import com.another1dd.galleryapp.models.redactor.ExifInfo
-import com.another1dd.galleryapp.utils.redactor.BitmapLoadUtils
 import com.another1dd.galleryapp.utils.redactor.FastBitmapDrawable
 import com.another1dd.galleryapp.utils.redactor.RectUtils
-import com.another1dd.galleryapp.utils.redactor.callback.BitmapLoadCallback
+import com.bumptech.glide.Glide
 
 
 open class TransformImageView : ImageView {
@@ -43,22 +40,12 @@ open class TransformImageView : ImageView {
 
     var imageInputPath: String? = null
     var imageOutputPath: String? = null
-    var exifInfo: ExifInfo? = null
 
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
-
-    private var maxBitmapSize = 0
-        get() {
-            if (field <= 0) {
-                maxBitmapSize = BitmapLoadUtils.calculateMaxBitmapSize(context)
-            }
-            return field
-        }
-
 
     /**
      * @return - current image scale value.
@@ -107,10 +94,6 @@ open class TransformImageView : ImageView {
         }
     }
 
-    override fun setImageBitmap(bitmap: Bitmap) {
-        setImageDrawable(FastBitmapDrawable(bitmap))
-    }
-
     /**
      * This method takes an Uri as a parameter, then calls method to decode it into Bitmap with specified size.
      *
@@ -118,27 +101,9 @@ open class TransformImageView : ImageView {
      * @throws Exception - can throw exception if having problems with decoding Uri or OOM.
      */
     @Throws(Exception::class)
-    fun setImageUri(imageUri: Uri, outputUri: Uri) {
-        val maxBitmapSize = maxBitmapSize
-
-        BitmapLoadUtils.decodeBitmapInBackground(context, imageUri, outputUri, maxBitmapSize, maxBitmapSize,
-                object : BitmapLoadCallback {
-                    override fun onBitmapLoaded(bitmap: Bitmap, exifInfo: ExifInfo, imageInputPath: String, imageOutputPath: String) {
-                        this@TransformImageView.imageInputPath = imageInputPath
-                        this@TransformImageView.imageOutputPath = imageOutputPath
-                        this@TransformImageView.exifInfo = exifInfo
-
-                        mBitmapDecoded = true
-                        setImageBitmap(bitmap)
-                    }
-
-                    override fun onFailure(bitmapWorkerException: Exception) {
-                        Log.e(TAG, "onFailure: setImageUri", bitmapWorkerException)
-                        if (mTransformImageListener != null) {
-                            mTransformImageListener!!.onLoadFailure(bitmapWorkerException)
-                        }
-                    }
-                })
+    fun setImageUri(uri: String) {
+        mBitmapDecoded = true
+        Glide.with(context).load(uri).into(this@TransformImageView)
     }
 
     /**

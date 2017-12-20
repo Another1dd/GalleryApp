@@ -10,5 +10,6 @@ data class Image(
         var id: Long = 0,
         var name: String? = null,
         var path: String,
-        var isSelected: Boolean = false
+        var isSelected: Boolean = false,
+        var imageType: Int? = null
 ) : Parcelable

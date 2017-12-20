@@ -110,7 +110,7 @@ open class CropImageView : TransformImageView {
         val cropParameters = CropParametres(
                 mMaxResultImageSizeX, mMaxResultImageSizeY,
                 compressFormat, compressQuality,
-                imageInputPath, imageOutputPath, exifInfo)
+                imageInputPath, imageOutputPath)
 
         BitmapCropTask(viewBitmap, imageState, cropParameters, cropCallback).execute()
     }

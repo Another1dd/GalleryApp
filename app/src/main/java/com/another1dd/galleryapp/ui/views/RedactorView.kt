@@ -2,7 +2,6 @@ package com.another1dd.galleryapp.ui.views
 
 import android.content.Context
 import android.graphics.RectF
-import android.net.Uri
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -48,10 +47,10 @@ class RedactorView : FrameLayout {
         return false
     }
 
-    fun resetCropImageView(imageUri: Uri, outputUri: Uri) {
+    fun resetCropImageView(imageUri:String) {
         removeView(cropImageView)
         cropImageView = GestureCropImageView(context)
-        cropImageView?.setImageUri(imageUri, outputUri)
+        cropImageView?.setImageUri(imageUri)
         cropImageView?.setCropRect(viewOverlay.cropViewRect)
 
         setListenersToViews()
